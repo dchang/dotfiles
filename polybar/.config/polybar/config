@@ -1,0 +1,105 @@
+[colors]
+;background = ${xrdb:background}
+background = #00000000
+foreground = ${xrdb:foreground}
+color1 = ${xrdb:color1}
+color8 = ${xrdb:color8}
+
+[bar/default]
+width = 100%
+height = 40
+;offset-x = 4
+;wm-restack = i3
+;override-redirect = true
+;border-size = 4
+;border-color = #00000000
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding = 1
+font-0 = Input Sans:size=11;3
+font-1 = TerminessTTF Nerd Font:size=16;2
+module-margin = 1
+modules-left = spotify
+modules-center = i3
+modules-right = battery alsa wlan date time
+;tray-position = right
+;tray-padding = 2
+;tray-background = ${colors.background}
+;cursor-click = pointer
+;cursor-scroll = ns-resize
+
+[module/spotify]
+type = custom/script
+interval = 0
+format =  <label>
+format-padding = 2
+exec = playerctl metadata xesam:artist; echo -n " - "; playerctl metadata xesam:title;
+exec-if = playerctl status
+click-left = playerctl play-pause
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+label-mode-padding = 2
+label-focused = •
+label-focused-padding = ${self.label-mode-padding}
+label-unfocused = •
+label-unfocused-foreground = ${colors.color8}
+label-unfocused-padding = ${self.label-mode-padding}
+label-urgent = •
+label-urgent-foreground = ${colors.color1}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+format-charging =  <label-charging>
+format-full =  <label-full>
+format-discharging = <ramp-capacity> <label-discharging>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-10 = 
+
+[module/wlan]
+type = internal/network
+interface = wlp60s0
+format-connected = <ramp-signal> <label-connected>
+format-disconnected = <label-disconnected>
+label-connected = %essid%
+label-disconnected = disconnected
+ramp-signal-0 = 睊
+ramp-signal-1 = 直
+ramp-signal-2 = 直
+ramp-signal-3 = 直
+ramp-signal-4 = 直
+ramp-signal-5 = 直
+
+[module/alsa]
+type = internal/alsa
+format-volume = <ramp-volume> <label-volume>
+label-muted = 婢 muted
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+
+[module/date]
+type = internal/date
+date =  %a %b %e
+label = %date%
+
+[module/time]
+type = internal/date
+interval = 1.0
+date = %r
+
