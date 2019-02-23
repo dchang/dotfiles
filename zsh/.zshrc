@@ -16,7 +16,9 @@ zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit && compinit
 autoload -Uz is-at-least # oh-my-zsh plugins/common-aliases dependency
 
-eval `keychain -q --eval --agents ssh id_rsa`
+if hash keychain 2>/dev/null; then
+	eval `keychain -q --eval --agents ssh id_rsa`
+fi
 
 # variables
 HISTFILE=~/.zsh_history
@@ -27,6 +29,7 @@ SPACESHIP_DOCKER_SYMBOL=" "
 SPACESHIP_ELIXIR_SYMBOL=" "
 
 # plugins
+hash antibody 2>/dev/null || curl -sL git.io/antibody | sh -s
 source <(antibody init)
 antibody bundle denysdovhan/spaceship-prompt
 antibody bundle robbyrussell/oh-my-zsh path:plugins/git
