@@ -3,3 +3,4 @@
 	name = David Chang
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore_global
