@@ -1,3 +1,5 @@
 [user]
 	email = dhchang@gmail.com
 	name = David Chang
+[core]
+	editor = vim
