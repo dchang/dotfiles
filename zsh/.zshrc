@@ -28,6 +28,7 @@ NVM_LAZY_LOAD=true
 SPACESHIP_CHAR_SYMBOL=" "
 SPACESHIP_DOCKER_SYMBOL=" "
 SPACESHIP_ELIXIR_SYMBOL=" "
+[ -f ~/.env ] && . ~/.env
 
 # plugins
 hash antibody 2>/dev/null || curl -sL git.io/antibody | sh -s
@@ -38,7 +39,8 @@ antibody bundle robbyrussell/oh-my-zsh path:plugins/common-aliases
 antibody bundle lukechilds/zsh-nvm
 
 # aliases
-alias ls='ls --color=always'
-alias la='ls -la'
-alias tree='tree -C'
+case "$OSTYPE" in
+	darwin*) alias ls='ls -G' ;;
+	linux*) alias ls='ls --color=auto' ;;
+esac
 
