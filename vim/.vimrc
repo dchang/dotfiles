@@ -20,6 +20,7 @@ Plug 'w0rp/ale'
 Plug 'udalov/kotlin-vim'
 Plug 'vimwiki/vimwiki'
 Plug 'hashivim/vim-terraform'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 let g:vimwiki_list = [{'path': '~/Dropbox/Documents/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
