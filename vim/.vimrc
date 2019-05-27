@@ -5,6 +5,7 @@ set number
 set ttimeoutlen=10
 set tabstop=2
 set shiftwidth=2
+set mouse=a
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
