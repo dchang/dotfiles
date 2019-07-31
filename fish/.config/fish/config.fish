@@ -6,5 +6,9 @@ if not functions -q fisher
     fish -c fisher
 end
 
+if type -q keychain
+	eval (keychain -q --eval id_rsa)
+end
+
 source ~/.profile
 
