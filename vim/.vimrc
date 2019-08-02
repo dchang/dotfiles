@@ -2,7 +2,7 @@ set nocompatible
 filetype indent plugin on
 syntax on
 set number
-set ttimeoutlen=10
+set ttimeoutlen=0
 set tabstop=2
 set shiftwidth=2
 set mouse=a
