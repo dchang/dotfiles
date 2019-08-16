@@ -14,12 +14,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'vimwiki/vimwiki'
+Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
-Plug 'w0rp/ale'
-Plug 'udalov/kotlin-vim'
-Plug 'vimwiki/vimwiki'
 Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
 call plug#end()
