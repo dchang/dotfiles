@@ -7,8 +7,9 @@ if not functions -q fisher
 end
 
 if type -q keychain
-	eval (keychain -q --eval id_rsa)
+    eval (keychain -q --eval id_rsa)
 end
 
-source ~/.profile
-
+if test -e ~/.profile
+    source ~/.profile
+end

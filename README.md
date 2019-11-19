@@ -1,6 +1,5 @@
 # dotfiles
 
-```
+```sh
 stow <dir>
 ```
-
