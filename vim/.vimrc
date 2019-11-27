@@ -23,7 +23,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
-let g:vimwiki_list = [{'path': '~/Dropbox/Documents/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:airline_powerline_fonts = 1
 let g:rustfmt_autosave = 1
 
