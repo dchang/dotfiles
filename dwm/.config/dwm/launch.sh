@@ -5,13 +5,15 @@ pwifi() {
 }
 
 pvol() {
-  echo " $(amixer get Master | awk -F'[][]' 'END{print $2}')"
+  read vol mute <<< $(amixer get Master | awk -F'[][]' 'END{print $2" "$6}')
+  [[ $mute = 'on' ]] && icon='' || icon=''
+  echo "$icon $vol"
 }
 
 pbat() {
   icons=''
   re=': (\w*), (.*)%' 
-  [[ `acpi` =~ $re ]]
+  [[ $(acpi) =~ $re ]]
   [[ ${BASH_REMATCH[1]} = 'Discharging' ]] && icon=${icons:BASH_REMATCH[2] / 20:1} || icon=''
   echo "${icon} ${BASH_REMATCH[2]}%"
 }
