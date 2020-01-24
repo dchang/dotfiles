@@ -10,9 +10,9 @@ pvol() {
 
 pbat() {
   icons=''
-  re=': (\w*), (.*)%,' 
+  re=': (\w*), (.*)%' 
   [[ `acpi` =~ $re ]]
-  [[ ${BASH_REMATCH[1]} = 'Charging' ]] && icon='' || icon=${icons:BASH_REMATCH[2] / 20:1}
+  [[ ${BASH_REMATCH[1]} = 'Discharging' ]] && icon=${icons:BASH_REMATCH[2] / 20:1} || icon=''
   echo "${icon} ${BASH_REMATCH[2]}%"
 }
 
