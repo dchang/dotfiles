@@ -1,7 +1,8 @@
 #!/bin/sh
 
 pwifi() {
-  echo " $(iw dev | grep ssid | awk '{print $2}')"
+  ssid=$(iw dev | grep ssid | awk '{print $2}')
+  if [ -z ${ssid} ]; then echo " Disconnected"; else echo " ${ssid}"; fi
 }
 
 pvol() {
