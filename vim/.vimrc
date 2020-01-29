@@ -1,12 +1,3 @@
-set nocompatible
-filetype indent plugin on
-syntax on
-set number
-set ttimeoutlen=0
-set tabstop=2
-set shiftwidth=2
-set mouse=a
-
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -14,16 +5,14 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'vimwiki/vimwiki'
-Plug 'w0rp/ale'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
-Plug 'hashivim/vim-terraform'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
-let g:vimwiki_list = [{'path': '~/Dropbox/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
-let g:airline_powerline_fonts = 1
-let g:rustfmt_autosave = 1
+set number                            "display line numbers
+
+let g:airline_powerline_fonts = 1     "include powerline fonts
+let g:airline_skip_empty_sections = 1 "hide warning/error powerline arrow
 
