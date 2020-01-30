@@ -3,6 +3,6 @@
 	name = David Chang
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/.gitignore
 [url "git@github.com:"]
 	insteadOf = https://github.com/
