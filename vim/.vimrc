@@ -13,8 +13,6 @@ call plug#end()
 
 set number                            "display line numbers
 
-let g:airline_powerline_fonts = 1     "include powerline fonts
-let g:airline_skip_empty_sections = 1 "hide warning/error powerline arrow
 let g:rustfmt_autosave = 1            "auto rustfmt on save
 
 "Syntastic recommended settings
