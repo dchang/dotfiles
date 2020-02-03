@@ -9,10 +9,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 set number                            "display line numbers
 
+let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:rustfmt_autosave = 1            "auto rustfmt on save
 
 "Syntastic recommended settings

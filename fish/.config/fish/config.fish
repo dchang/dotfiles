@@ -13,6 +13,6 @@ if status is-login
 end
 
 if test -e ~/.profile
-  source ~/.profile
+  . ~/.profile
 end
 
