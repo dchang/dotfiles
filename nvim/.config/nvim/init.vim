@@ -10,6 +10,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'vimwiki/vimwiki'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 set number                            "display line numbers
