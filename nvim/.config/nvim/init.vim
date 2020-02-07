@@ -7,10 +7,11 @@ endif
 call plug#begin(stdpath('config') . '/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'rust-lang/rust.vim'
-Plug 'vim-syntastic/syntastic'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/vim-easy-align'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'lotabout/skim'
 call plug#end()
 
 set number                            "display line numbers
