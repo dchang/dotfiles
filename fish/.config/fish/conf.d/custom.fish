@@ -1,3 +1,5 @@
+# skim
+alias sk='sk --color=fg:8,hl:1,hl+:1'
 abbr -a skg 'sk --ansi -ic \'rg --color=ansi --hidden -in "{}"\''
 
 # vim

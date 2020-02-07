@@ -11,7 +11,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'junegunn/vim-easy-align'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'lotabout/skim'
 call plug#end()
 
 set number                            "display line numbers
@@ -29,4 +28,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"Keymaps
+
+map <c-p> :SK<cr>
 
