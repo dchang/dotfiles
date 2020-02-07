@@ -1,3 +1,5 @@
+abbr -a skg 'sk --ansi -ic \'rg --color=ansi --hidden -in "{}"\''
+
 # vim
 abbr -a vim nvim
 abbr -a v nvim
