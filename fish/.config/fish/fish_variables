@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
 SETUVAR _fish_abbr_g:git
@@ -114,10 +115,10 @@ SETUVAR _fish_abbr_gup:git\x20pull\x20\x2d\x2drebase
 SETUVAR _fish_abbr_gwch:git\x20whatchanged\x20\x2dp\x20\x2d\x2dabbrev\x2dcommit\x20\x2d\x2dpretty\x3dmedium
 SETUVAR _fish_abbr_skg:sk\x20\x2d\x2dansi\x20\x2dic\x20\x27rg\x20\x2d\x2dcolor\x3dansi\x20\x2d\x2dhidden\x20\x2din\x20\x22\x7b\x7d\x22\x27
 SETUVAR _fish_abbr_v:nvim
-SETUVAR _fish_abbr_vd:nvim\x20\x2dc\x20VimwikiMakeDiaryNote
+SETUVAR _fish_abbr_vd:nvim\x20\x2dc\x20VimwikiMakeDiaryNote\x20\x2dc\x20\x22cd\x20\x25\x3ap\x3ah\x22
 SETUVAR _fish_abbr_vim:nvim
-SETUVAR _fish_abbr_vrc:nvim\x20/home/dchang/\x2econfig/nvim/init\x2evim
-SETUVAR _fish_abbr_vw:nvim\x20\x2dc\x20VimwikiIndex
+SETUVAR _fish_abbr_vrc:nvim\x20\x7e/\x2econfig/nvim/init\x2evim\x20\x2dc\x20\x22cd\x20\x7e/\x2econfig\x22
+SETUVAR _fish_abbr_vw:nvim\x20\x2dc\x20VimwikiIndex\x20\x2dc\x20\x22cd\x20\x25\x3ap\x3ah\x22
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
@@ -140,6 +141,7 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
