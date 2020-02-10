@@ -23,6 +23,8 @@ abbr -a vw 'nvim -c VimwikiIndex -c "cd %:p:h"'
 abbr -a vd 'nvim -c VimwikiMakeDiaryNote -c "cd %:p:h"'
 abbr -a vrc 'nvim ~/.config/nvim/init.vim -c "cd ~/.config"'
 
+eval (keychain -q --eval id_rsa)
+
 if test -e ~/.profile
   . ~/.profile
 end
