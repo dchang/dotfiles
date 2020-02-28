@@ -11,9 +11,12 @@ Plug 'vimwiki/vimwiki'
 Plug 'junegunn/vim-easy-align'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
+Plug 'w0ng/vim-hybrid'
 call plug#end()
 
-set number                            "display line numbers
+set number                            "display line numbersCOLO
+
+colo hybrid
 
 let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:rustfmt_autosave = 1            "auto rustfmt on save
