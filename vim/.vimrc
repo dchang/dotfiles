@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'vimwiki/vimwiki'
 Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 colorscheme gruvbox
@@ -35,5 +36,7 @@ set background=dark
 let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:rustfmt_autosave = 1
 
-let mapleader =  " "
+let mapleader = ' '
+
+source $HOME/.config/vim/coc.vimrc
 
