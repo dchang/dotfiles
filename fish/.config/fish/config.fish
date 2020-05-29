@@ -20,7 +20,7 @@ abbr -a skg 'sk --ansi -ic \'rg --color=ansi --hidden -in "{}"\''
 abbr -a v vim
 abbr -a vw 'vim -c VimwikiIndex -c "cd %:p:h"'
 abbr -a vd 'vim -c VimwikiMakeDiaryNote -c "cd %:p:h"'
-abbr -a vrc 'vim ~/.vimrc -c "cd ~"'
+abbr -a vrc 'vim ~/.vim/vimrc -c "cd %:p:h"'
 
 eval (keychain -q --eval id_rsa)
 

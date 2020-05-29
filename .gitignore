@@ -6,3 +6,7 @@ fish/.config/fish/fish_variables
 nvim/.config/nvim/plugged/
 nvim/.config/nvim/.netrwhist
 
+vim/.vim/*
+!vim/.vim/vimrc
+!vim/.vim/config/
+
