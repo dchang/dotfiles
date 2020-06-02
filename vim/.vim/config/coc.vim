@@ -1,3 +1,5 @@
+call coc#add_extension('coc-json', 'coc-rls', 'coc-snippets')
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
