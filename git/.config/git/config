@@ -2,7 +2,7 @@
 	email = dhchang@gmail.com
 	name = David Chang
 [core]
-	editor = nvim
+	editor = vim
 	excludesfile = ~/.config/git/.gitignore
 [url "git@github.com:"]
 	insteadOf = https://github.com/
