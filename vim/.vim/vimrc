@@ -39,3 +39,15 @@ set background=dark
 
 runtime config/coc.vim
 
+" fzf
+nnoremap <leader><leader> :GFiles<CR>
+nnoremap <leader>fa       :Files<CR>
+nnoremap <leader>ff       :Buffers<CR>
+nnoremap <leader>fl       :Lines<CR>
+nnoremap <leader>fw       :Windows<CR>
+nnoremap <leader>fr       :Rg<CR>
+nnoremap <leader>fc       :Commits<CR>
+nnoremap <leader>fb       :BCommits<CR>
+nnoremap <leader>fh       :History<CR>
+nnoremap <leader>fm       :Maps<CR>
+
