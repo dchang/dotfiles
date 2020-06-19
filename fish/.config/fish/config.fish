@@ -17,10 +17,11 @@ alias sk='sk --color=fg:8,hl:1,hl+:1'
 abbr -a skg 'sk --ansi -ic \'rg --color=ansi --hidden -in "{}"\''
 
 # vim
-abbr -a v vim
-abbr -a vw 'vim -c VimwikiIndex -c "cd %:p:h"'
-abbr -a vd 'vim -c VimwikiMakeDiaryNote -c "cd %:p:h"'
-abbr -a vrc 'vim ~/.vim/vimrc -c "cd %:p:h"'
+abbr -a v nvim
+abbr -a vw 'nvim -c VimwikiIndex -c "cd %:p:h"'
+abbr -a vd 'nvim -c VimwikiMakeDiaryNote -c "cd %:p:h"'
+abbr -a vcv 'nvim ~/.vim/vimrc -c "cd %:p:h"'
+abbr -a vcf 'nvim ~/.config/fish/config.fish -c "cd %:p:h"'
 
 eval (keychain -q --eval id_rsa)
 
