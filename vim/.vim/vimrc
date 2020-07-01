@@ -33,18 +33,19 @@ if &term =~ '256color'
     set t_ut=
 endif
 
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
 
 runtime config/coc.vim
 
 " fzf
-nnoremap <leader><leader> :Buffers<CR>
+nnoremap <leader><leader> :Files<CR>
 nnoremap <leader>fg       :GFiles<CR>
-nnoremap <leader>ff       :Files<CR>
+nnoremap <leader>ff       :Buffers<CR>
 nnoremap <leader>fl       :Lines<CR>
 nnoremap <leader>fw       :Windows<CR>
-nnoremap <leader>fr       :Rg<CR>
+nnoremap <leader>fs       :Rg<CR>
 nnoremap <leader>fc       :Commits<CR>
 nnoremap <leader>fb       :BCommits<CR>
 nnoremap <leader>fh       :History<CR>
