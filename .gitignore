@@ -9,4 +9,5 @@ vim/.vim/*
 !vim/.vim/vimrc
 !vim/.vim/coc-settings.json
 !vim/.vim/config/
+!vim/.vim/after/
 
