@@ -1,4 +1,4 @@
-call coc#add_extension('coc-json', 'coc-rls', 'coc-snippets')
+call coc#add_extension('coc-json', 'coc-rls', 'coc-snippets', 'coc-markdownlint', 'coc-python')
 
 " TextEdit might fail if hidden is not set.
 set hidden
