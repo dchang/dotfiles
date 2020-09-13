@@ -12,6 +12,12 @@ if status is-login
   end
 end
 
+set -x FZF_DEFAULT_COMMAND 'fd -H -tf -E.git -Enode_modules -Etarget'
+
+# fix small fzf delay caused by fish shell
+alias fzf 'SHELL=bash command fzf'
+alias nvim 'SHELL=bash command nvim'
+
 # vim
 abbr -a v nvim
 abbr -a vw 'nvim -c VimwikiIndex -c "cd %:p:h"'
