@@ -40,9 +40,9 @@ set background=dark
 runtime config/coc.vim
 
 " fzf
-nnoremap <leader><leader> :Files<CR>
-nnoremap <leader>fg       :GFiles<CR>
-nnoremap <leader>ff       :Buffers<CR>
+nnoremap <leader><leader> :GFiles<CR>
+nnoremap <leader>ff       :Files<CR>
+nnoremap <leader>fd       :Buffers<CR>
 nnoremap <leader>fl       :Lines<CR>
 nnoremap <leader>fw       :Windows<CR>
 nnoremap <leader>fs       :Rg<CR>
