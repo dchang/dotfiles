@@ -21,9 +21,8 @@ Plug 'morhetz/gruvbox'
 Plug 'vimwiki/vimwiki'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf.vim'
+Plug 'cespare/vim-toml'
 call plug#end()
-
-let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 let mapleader = ' '
 
@@ -33,10 +32,16 @@ if &term =~ '256color'
     set t_ut=
 endif
 
+" gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
 
+" vimwiki
+let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+
+" coc
+call coc#add_extension('coc-json', 'coc-rls', 'coc-snippets', 'coc-markdownlint', 'coc-python')
 runtime config/coc.vim
 
 " fzf
