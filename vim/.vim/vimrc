@@ -25,6 +25,7 @@ Plug 'cespare/vim-toml'
 call plug#end()
 
 let mapleader = ' '
+nnoremap Y y$
 
 if &term =~ '256color'
     " Disable Background Color Erase (BCE) so that color schemes
