@@ -40,11 +40,12 @@ set background=dark
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
 
 " coc
-let g:coc_global_extensions = ['coc-json', 'coc-rls', 'coc-snippets', 'coc-markdownlint', 'coc-python', 'coc-tsserver', 'coc-prettier']
+let g:coc_global_extensions = ['coc-rls', 'coc-python', 'coc-tsserver', 'coc-json', 'coc-snippets', 'coc-markdownlint', 'coc-prettier']
 let g:coc_user_config = {
-    \"coc.preferences.formatOnSaveFiletypes": ["rust", "javascript", "javascriptreact", "typescript", "typescriptreact"]
+    \"coc.preferences.formatOnSaveFiletypes": ["rust", "javascript", "javascriptreact", "typescript", "typescriptreact", "markdown"]
     \}
 runtime config/coc.vim
 
