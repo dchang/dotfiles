@@ -42,7 +42,10 @@ set background=dark
 let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 " coc
-call coc#add_extension('coc-json', 'coc-rls', 'coc-snippets', 'coc-markdownlint', 'coc-python')
+let g:coc_global_extensions = ['coc-json', 'coc-rls', 'coc-snippets', 'coc-markdownlint', 'coc-python', 'coc-tsserver']
+let g:coc_user_config = {
+    \"coc.preferences.formatOnSaveFiletypes": ["rust"]
+    \}
 runtime config/coc.vim
 
 " fzf
