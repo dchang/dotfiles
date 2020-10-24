@@ -16,14 +16,6 @@ set nohlsearch
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'vimwiki/vimwiki'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf.vim'
-Plug 'cespare/vim-toml'
-call plug#end()
-
 let mapleader = ' '
 nnoremap Y y$
 
@@ -33,23 +25,59 @@ if &term =~ '256color'
     set t_ut=
 endif
 
+"-----------------------------------------------------------------------------
+" vim-plug
+
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'vimwiki/vimwiki'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+call plug#end()
+
+"-----------------------------------------------------------------------------
 " gruvbox
+
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
 
+"-----------------------------------------------------------------------------
 " vimwiki
+
 let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+
+" prevents associating vimwiki filetype for markdown files outside the vimwiki directory
 let g:vimwiki_global_ext = 0
 
+"-----------------------------------------------------------------------------
 " coc
-let g:coc_global_extensions = ['coc-rls', 'coc-python', 'coc-tsserver', 'coc-json', 'coc-snippets', 'coc-markdownlint', 'coc-prettier']
+
+let g:coc_global_extensions = [
+\    'coc-rls',
+\    'coc-python',
+\    'coc-tsserver',
+\    'coc-json',
+\    'coc-snippets',
+\    'coc-markdownlint',
+\    'coc-prettier'
+\]
 let g:coc_user_config = {
-    \"coc.preferences.formatOnSaveFiletypes": ["rust", "javascript", "javascriptreact", "typescript", "typescriptreact", "markdown"]
-    \}
+\    'coc.preferences.formatOnSaveFiletypes': [
+\        'rust',
+\        'javascript',
+\        'javascriptreact',
+\        'typescript',
+\        'typescriptreact',
+\        'markdown'
+\    ]
+\}
 runtime config/coc.vim
 
+"-----------------------------------------------------------------------------
 " fzf
+
 nnoremap <leader><leader> :GFiles<CR>
 nnoremap <leader>ff       :Files<CR>
 nnoremap <leader>fd       :Buffers<CR>
