@@ -1,91 +1,83 @@
 syntax on
 
-set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set background=dark
+set colorcolumn=80
 set expandtab
-set smartindent
-set number relativenumber
-set smartcase
-set noswapfile
+set incsearch
 set nobackup
+set noerrorbells
+set noswapfile
+set number relativenumber
+set shiftwidth=4
+set smartcase
+set smartindent
+set tabstop=4 softtabstop=4
 set undodir=~/.vim/undodir
 set undofile
-set incsearch
-set nohlsearch
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 let mapleader = ' '
 nnoremap Y y$
+nmap <silent> <leader>/ :set invhlsearch<CR>
 
-if &term =~ '256color'
-    " Disable Background Color Erase (BCE) so that color schemes
-    " work properly when Vim is used inside tmux and GNU screen.
-    set t_ut=
-endif
+" vim-plug {
+  call plug#begin('~/.vim/plugged')
+  Plug 'morhetz/gruvbox'
+  Plug 'vimwiki/vimwiki'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'junegunn/fzf.vim'
+  Plug 'tpope/vim-surround'
+  call plug#end()
+" }
 
-"-----------------------------------------------------------------------------
-" vim-plug
+" gruvbox {
+  let g:gruvbox_contrast_dark = 'hard'
+  colorscheme gruvbox
+" }
 
-call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'vimwiki/vimwiki'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-surround'
-call plug#end()
+" vimwiki {
+  let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+  
+  " prevents associating vimwiki filetype for markdown files outside the vimwiki directory
+  let g:vimwiki_global_ext = 0
+" }
 
-"-----------------------------------------------------------------------------
-" gruvbox
-
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
-set background=dark
-
-"-----------------------------------------------------------------------------
-" vimwiki
-
-let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
-
-" prevents associating vimwiki filetype for markdown files outside the vimwiki directory
-let g:vimwiki_global_ext = 0
-
-"-----------------------------------------------------------------------------
-" coc
-
+" coc {
 let g:coc_global_extensions = [
-\    'coc-rls',
-\    'coc-python',
-\    'coc-tsserver',
-\    'coc-json',
-\    'coc-snippets',
-\    'coc-markdownlint',
-\    'coc-prettier'
-\]
-let g:coc_user_config = {
-\    'coc.preferences.formatOnSaveFiletypes': [
-\        'rust',
-\        'javascript',
-\        'javascriptreact',
-\        'typescript',
-\        'typescriptreact',
-\        'markdown'
-\    ]
-\}
-runtime config/coc.vim
+  \   'coc-rls',
+  \   'coc-python',
+  \   'coc-tsserver',
+  \   'coc-json',
+  \   'coc-snippets',
+  \   'coc-markdownlint',
+  \   'coc-prettier'
+  \ ]
+  let g:coc_user_config = {
+  \   'coc.preferences.formatOnSaveFiletypes': [
+  \     'rust',
+  \     'javascript',
+  \     'javascriptreact',
+  \     'typescript',
+  \     'typescriptreact',
+  \     'markdown'
+  \   ]
+  \ }
+  runtime config/coc.vim
+" }
 
-"-----------------------------------------------------------------------------
-" fzf
-
-nnoremap <leader><leader> :GFiles<CR>
-nnoremap <leader>ff       :Files<CR>
-nnoremap <leader>fd       :Buffers<CR>
-nnoremap <leader>fl       :Lines<CR>
-nnoremap <leader>fw       :Windows<CR>
-nnoremap <leader>fs       :Rg<CR>
-nnoremap <leader>fc       :Commits<CR>
-nnoremap <leader>fb       :BCommits<CR>
-nnoremap <leader>fh       :History<CR>
-nnoremap <leader>fm       :Maps<CR>
+" fzf {
+  nnoremap <leader>ff :Files<CR>
+  nnoremap <leader>fg :GFiles<CR>
+  nnoremap <leader>fd :Buffers<CR>
+  nnoremap <leader>fl :Lines<CR>
+  nnoremap <leader>fw :Windows<CR>
+  nnoremap <leader>fs :Rg<CR>
+  nnoremap <leader>fc :Commits<CR>
+  nnoremap <leader>fv :BCommits<CR>
+  nnoremap <leader>fh :History<CR>
+  nnoremap <leader>fm :Maps<CR>
+  
+  nmap <leader><tab> <plug>(fzf-maps-n)
+  xmap <leader><tab> <plug>(fzf-maps-x)
+  omap <leader><tab> <plug>(fzf-maps-o)
+" }
 
