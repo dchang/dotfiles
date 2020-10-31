@@ -1,23 +1,28 @@
 syntax on
 
-set background=dark
-set colorcolumn=80
-set expandtab
-set incsearch
-set nobackup
-set noerrorbells
-set noswapfile
-set number relativenumber
-set shiftwidth=4
-set smartcase
-set smartindent
-set tabstop=4 softtabstop=4
-set undodir=~/.vim/undodir
-set undofile
+" options {
+  set background=dark        " adjusts the default color groups
+  set colorcolumn=80         " highlights screen columns
+  set expandtab              " use spaces for indents
+  set noerrorbells           " disable bell for error messages
+  set noswapfile             " disable swapfile creation
+  set number relativenumber  " show line number relative to current line
+  set shiftwidth=4           " indent size
+  set softtabstop=4          " tab size in insert mode
+  set tabstop=4              " tab size
+  set undodir=~/.vim/undodir " directory where undo file is stored
+  set undofile               " save undo history to undo file
+" }
 
-let mapleader = ' '
-nnoremap Y y$
-nmap <silent> <leader>/ :set invhlsearch<CR>
+" maps {
+  let mapleader = ' '
+
+  " copy text to end of line consistent with C and D ops
+  nnoremap Y y$
+
+  " toggle search highlight 
+  nmap <silent> <leader>/ :set invhlsearch<CR>
+" }
 
 " vim-plug {
   call plug#begin('~/.vim/plugged')
@@ -26,6 +31,7 @@ nmap <silent> <leader>/ :set invhlsearch<CR>
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-surround'
+  Plug 'godlygeek/tabular'
   call plug#end()
 " }
 
@@ -37,12 +43,12 @@ nmap <silent> <leader>/ :set invhlsearch<CR>
 " vimwiki {
   let g:vimwiki_list = [{'path': '~/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
   
-  " prevents associating vimwiki filetype for markdown files outside the vimwiki directory
+  " prevent associating vimwiki filetype to markdown files outside the vimwiki directory
   let g:vimwiki_global_ext = 0
 " }
 
 " coc {
-let g:coc_global_extensions = [
+  let g:coc_global_extensions = [
   \   'coc-rls',
   \   'coc-python',
   \   'coc-tsserver',
