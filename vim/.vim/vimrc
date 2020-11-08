@@ -17,7 +17,7 @@ syntax on
 " maps {
   let mapleader = ' '
 
-  " copy text to end of line consistent with C and D ops
+  " yank from the cursor position to the end of the line like C and D ops
   nnoremap Y y$
 
   " toggle search highlight 
@@ -47,6 +47,23 @@ syntax on
   let g:vimwiki_global_ext = 0
 " }
 
+" fzf {
+  nnoremap <leader>ff :Files<CR>
+  nnoremap <leader>fg :GFiles<CR>
+  nnoremap <leader>fb :Buffers<CR>
+  nnoremap <leader>fs :Rg<CR>
+  nnoremap <leader>fh :History<CR>
+  nnoremap <leader>fl :Lines<CR>
+  nnoremap <leader>fw :Windows<CR>
+  nnoremap <leader>fc :Commits<CR>
+  nnoremap <leader>fv :BCommits<CR>
+  nnoremap <leader>fm :Maps<CR>
+  
+  nmap <leader><tab> <plug>(fzf-maps-n)
+  xmap <leader><tab> <plug>(fzf-maps-x)
+  omap <leader><tab> <plug>(fzf-maps-o)
+" }
+
 " coc {
   let g:coc_global_extensions = [
   \   'coc-rls',
@@ -67,23 +84,7 @@ syntax on
   \     'markdown'
   \   ]
   \ }
-  runtime config/coc.vim
-" }
 
-" fzf {
-  nnoremap <leader>ff :Files<CR>
-  nnoremap <leader>fg :GFiles<CR>
-  nnoremap <leader>fd :Buffers<CR>
-  nnoremap <leader>fl :Lines<CR>
-  nnoremap <leader>fw :Windows<CR>
-  nnoremap <leader>fs :Rg<CR>
-  nnoremap <leader>fc :Commits<CR>
-  nnoremap <leader>fv :BCommits<CR>
-  nnoremap <leader>fh :History<CR>
-  nnoremap <leader>fm :Maps<CR>
-  
-  nmap <leader><tab> <plug>(fzf-maps-n)
-  xmap <leader><tab> <plug>(fzf-maps-x)
-  omap <leader><tab> <plug>(fzf-maps-o)
+  runtime config/coc.vim
 " }
 
