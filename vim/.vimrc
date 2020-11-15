@@ -20,7 +20,7 @@ syntax on
   set statusline+=%{coc#status()}                      " coc status
   set statusline+=%{get(b:,'coc_current_function','')} " coc function
   set statusline+=%=                                   " align right
-  set statusline+=%t                                   " file name
+  set statusline+=%f                                   " file path
 " }
 
 " maps {
