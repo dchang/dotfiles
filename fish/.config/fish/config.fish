@@ -19,7 +19,7 @@ alias nvim 'SHELL=bash command nvim'
 abbr -a v nvim
 abbr -a vw 'nvim -c VimwikiIndex -c "cd %:p:h"'
 abbr -a vd 'nvim -c VimwikiMakeDiaryNote -c "cd %:p:h"'
-abbr -a vcv 'nvim ~/.vim/vimrc -c "cd %:p:h"'
+abbr -a vcv 'nvim ~/.vimrc -c "cd ~/.vim"'
 abbr -a vcf 'nvim ~/.config/fish/config.fish -c "cd %:p:h"'
 
 # rust
