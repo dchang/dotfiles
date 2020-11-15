@@ -58,7 +58,7 @@ syntax on
 
 " fzf {
   nnoremap <leader>ff :Files<CR>
-  nnoremap <leader>fg :GFiles<CR>
+  nnoremap <leader>fg :GFiles --cached --others --exclude-standard<CR>
   nnoremap <leader>fb :Buffers<CR>
   nnoremap <leader>fs :Rg<CR>
   nnoremap <leader>fh :History<CR>
