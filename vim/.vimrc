@@ -2,7 +2,7 @@ syntax on
 
 " options {
   set background=dark        " adjusts the default color groups
-  set colorcolumn=80         " highlights screen columns
+  set colorcolumn=100        " highlights screen columns
   set expandtab              " use spaces for indents
   set noerrorbells           " disable bell for error messages
   set noswapfile             " disable swapfile creation
