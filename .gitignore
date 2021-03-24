@@ -1,6 +1,6 @@
 fish/.config/fish/*
 !fish/.config/fish/config.fish
-!fish/.config/fish/fishfile
+!fish/.config/fish/fish_plugins
 
 nvim/.config/nvim/plugged/
 nvim/.config/nvim/.netrwhist
