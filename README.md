@@ -1,5 +1,6 @@
 # dotfiles
 
 ```sh
-stow <dir>
+stow <dir>    # stow package
+stow -D <dir> # unstow package
 ```
