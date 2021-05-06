@@ -35,7 +35,7 @@ syntax on
 
 " vim-plug {
   call plug#begin('~/.vim/plugged')
-  Plug 'morhetz/gruvbox'
+  Plug 'lifepillar/vim-gruvbox8'
   Plug 'vimwiki/vimwiki'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'junegunn/fzf.vim'
@@ -46,7 +46,7 @@ syntax on
 
 " gruvbox {
   let g:gruvbox_contrast_dark = 'hard'
-  colorscheme gruvbox
+  colorscheme gruvbox8_hard
 " }
 
 " vimwiki {
