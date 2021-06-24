@@ -57,15 +57,15 @@ syntax on
 " }
 
 " fzf {
-  nnoremap <leader>ff :Files<CR>
-  nnoremap <leader>fg :GFiles --cached --others --exclude-standard<CR>
-  nnoremap <leader>fb :Buffers<CR>
+  nnoremap <leader>fw :Windows<CR>
+  nnoremap <leader>fa :Files<CR>
   nnoremap <leader>fs :Rg<CR>
+  nnoremap <leader>ff :Buffers<CR>
+  nnoremap <leader>fg :GFiles -co --exclude-standard<CR>
   nnoremap <leader>fh :History<CR>
   nnoremap <leader>fl :Lines<CR>
-  nnoremap <leader>fw :Windows<CR>
   nnoremap <leader>fc :Commits<CR>
-  nnoremap <leader>fv :BCommits<CR>
+  nnoremap <leader>fb :BCommits<CR>
   nnoremap <leader>fm :Maps<CR>
   
   nmap <leader><tab> <plug>(fzf-maps-n)
