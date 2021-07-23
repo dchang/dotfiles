@@ -41,6 +41,7 @@ syntax on
   Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-surround'
   Plug 'godlygeek/tabular'
+  Plug 'dstein64/vim-startuptime'
   call plug#end()
 " }
 
