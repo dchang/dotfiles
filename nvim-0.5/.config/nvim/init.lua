@@ -24,6 +24,7 @@ require 'paq' {
 	'dstein64/vim-startuptime';
 	'junegunn/fzf';
 	'junegunn/fzf.vim';
+	'vimwiki/vimwiki';
 }
 
 cmd 'colorscheme gruvbox8_hard'
@@ -47,6 +48,8 @@ nnoremap('<leader>fl',  ':Lines<CR>')
 nnoremap('<leader>fc',  ':Commits<CR>')
 nnoremap('<leader>fb',  ':BCommits<CR>')
 nnoremap('<leader>fm',  ':Maps<CR>')
+
+g.vimwiki_list = { { path = '~/Documents/wiki', syntax = 'markdown', ext = '.md' } }
 
 --[[
 ## TODO
