@@ -77,28 +77,26 @@ nnoremap(']d',  '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
 nnoremap('<leader>ds',  '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
 nnoremap('<leader>df',  '<cmd>lua vim.lsp.buf.formatting()<CR>')
 
---local lsp_status = require('lsp-status')
---lsp_status.register_progress()
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
 local lspconfig = require('lspconfig')
 lspconfig.rust_analyzer.setup{
-	--on_attach = lsp_status.on_attach,
-	--capabilities = lsp_status.capabilities
+	on_attach = lsp_status.on_attach,
+	capabilities = lsp_status.capabilities
 }
-
---opt.statusline = [[%!luaeval("require('lsp-status').status()")]]
 
 require'plenary.reload'.reload_module('lualine', true)
 require'lualine'.setup {
 	options = {
-		component_separators = '|',
+		section_separators = '',
+		component_separators = '',
 	},
 	sections = {
-		--lualine_c = {'filename', require'lsp-status'.status},
-		--lualine_x = {'filetype'},
+		lualine_x = {require'lsp-status'.status},
+		lualine_y = {'location'},
+		lualine_z = {},
 	}
 }
-
-
 
 --[[
 ## TODO
