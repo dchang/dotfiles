@@ -27,7 +27,8 @@ require 'paq' {
 	'vimwiki/vimwiki';
 	'neovim/nvim-lspconfig';
 	--'dstein64/vim-startuptime';
-	--'nvim-lua/lsp-status.nvim';
+	'nvim-lua/lsp-status.nvim';
+	'nvim-lua/plenary.nvim';
 	'hoob3rt/lualine.nvim';
 	--'kyazdani42/nvim-web-devicons';
 	--'ryanoasis/vim-devicons';
@@ -44,6 +45,7 @@ g.mapleader = ' '
 local nnoremap = function(lhs, rhs) vim.api.nvim_set_keymap('n', lhs, rhs, {noremap = true}) end
 
 nnoremap('Y', 'y$')
+nnoremap('<leader>sv', ':source $MYVIMRC<CR>')
 nnoremap('<leader>fw',  ':Windows<CR>')
 nnoremap('<leader>fa',  ':Files<CR>')
 nnoremap('<leader>fs',  ':Rg<CR>')
@@ -82,11 +84,20 @@ lspconfig.rust_analyzer.setup{
 	--on_attach = lsp_status.on_attach,
 	--capabilities = lsp_status.capabilities
 }
---local sl = ''
---sl = sl..[[%!luaeval("require('lsp-status').status()")]]
---opt.statusline = sl
 
-require('lualine').setup()
+--opt.statusline = [[%!luaeval("require('lsp-status').status()")]]
+
+require'plenary.reload'.reload_module('lualine', true)
+require'lualine'.setup {
+	options = {
+		component_separators = '|',
+	},
+	sections = {
+		--lualine_c = {'filename', require'lsp-status'.status},
+		--lualine_x = {'filetype'},
+	}
+}
+
 
 
 --[[
