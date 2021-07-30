@@ -16,31 +16,34 @@ local api = vim.api
 
 local paq_path = fn.stdpath('data')..'/site/pack/paqs/opt/paq-nvim'
 if fn.empty(fn.glob(paq_path)) > 0 then
-	cmd('!git clone --depth=1 https://github.com/savq/paq-nvim '..paq_path)
-	cmd('packadd paq-nvim')
+    cmd('!git clone --depth=1 https://github.com/savq/paq-nvim '..paq_path)
+    cmd('packadd paq-nvim')
 end
 
 require 'paq' {
-	'savq/paq-nvim';
-	'tweekmonster/startuptime.vim';
-	'lifepillar/vim-gruvbox8';
-	'junegunn/fzf';
-	'junegunn/fzf.vim';
-	'vimwiki/vimwiki';
-	'nvim-lua/plenary.nvim';
-	'neovim/nvim-lspconfig';
-	'nvim-lua/lsp-status.nvim';
-	'hoob3rt/lualine.nvim';
-	--'kyazdani42/nvim-web-devicons';
-	--'ryanoasis/vim-devicons';
-	--'dstein64/vim-startuptime';
+    'savq/paq-nvim';
+    'tweekmonster/startuptime.vim';
+    'lifepillar/vim-gruvbox8';
+    'junegunn/fzf';
+    'junegunn/fzf.vim';
+    'vimwiki/vimwiki';
+    --'nvim-lua/plenary.nvim';
+    'neovim/nvim-lspconfig';
+    'nvim-lua/lsp-status.nvim';
+    'hoob3rt/lualine.nvim';
+    --'kyazdani42/nvim-web-devicons';
+    --'ryanoasis/vim-devicons';
 }
 
 cmd 'colorscheme gruvbox8_hard'
 
 opt.relativenumber = true -- show relative line numbers
+opt.colorcolumn = '100'   -- highlight screen column
+opt.expandtab = true      -- use spaces for indents
 opt.tabstop = 4           -- tab size
 opt.shiftwidth = 0        -- use tabstop
+opt.noswapfile = true     -- disable swapfile creation
+--opt.list = true           -- show tabs
 
 g.mapleader = ' '
 g.vimwiki_list = { { path = '~/Documents/wiki', syntax = 'markdown', ext = '.md' } }
@@ -50,16 +53,16 @@ local nnoremap = function(lhs, rhs) api.nvim_set_keymap('n', lhs, rhs, {noremap 
 nnoremap('Y', 'y$')
 nnoremap('<leader>sv', ':source $MYVIMRC<CR>')
 
-nnoremap('<leader>fw',  ':Windows<CR>')
-nnoremap('<leader>fa',  ':Files<CR>')
-nnoremap('<leader>fs',  ':Rg<CR>')
-nnoremap('<leader>ff',  ':Buffers<CR>')
-nnoremap('<leader>fg',  ':GFiles -co --exclude-standard<CR>')
-nnoremap('<leader>fh',  ':History<CR>')
-nnoremap('<leader>fl',  ':Lines<CR>')
-nnoremap('<leader>fc',  ':Commits<CR>')
-nnoremap('<leader>fb',  ':BCommits<CR>')
-nnoremap('<leader>fm',  ':Maps<CR>')
+nnoremap('<leader>fw', ':Windows<CR>')
+nnoremap('<leader>fa', ':Files<CR>')
+nnoremap('<leader>fs', ':Rg<CR>')
+nnoremap('<leader>ff', ':Buffers<CR>')
+nnoremap('<leader>fg', ':GFiles -co --exclude-standard<CR>')
+nnoremap('<leader>fh', ':History<CR>')
+nnoremap('<leader>fl', ':Lines<CR>')
+nnoremap('<leader>fc', ':Commits<CR>')
+nnoremap('<leader>fb', ':BCommits<CR>')
+nnoremap('<leader>fm', ':Maps<CR>')
 
 nnoremap('gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
 nnoremap('gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
@@ -84,23 +87,23 @@ lsp_status.register_progress()
 
 local lspconfig = require('lspconfig')
 lspconfig.rust_analyzer.setup{
-	on_attach = lsp_status.on_attach,
-	capabilities = lsp_status.capabilities
+    on_attach = lsp_status.on_attach,
+    capabilities = lsp_status.capabilities
 }
 
 api.nvim_exec('autocmd BufWritePre *.rs lua vim.lsp.buf.formatting()', false)
 
-require'plenary.reload'.reload_module('lualine', true)
+--require'plenary.reload'.reload_module('lualine', true)
 require'lualine'.setup {
-	options = {
-		section_separators = '',
-		component_separators = '',
-	},
-	sections = {
-		lualine_x = {require'lsp-status'.status},
-		lualine_y = {'location'},
-		lualine_z = {},
-	}
+    options = {
+        section_separators = '',
+        component_separators = '',
+    },
+    sections = {
+        lualine_x = {require'lsp-status'.status},
+        lualine_y = {'location'},
+        lualine_z = {},
+    }
 }
 
 --[[
