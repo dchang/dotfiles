@@ -1,4 +1,16 @@
 --[[
+## TODO
+
+- [ ] Plugins
+- [ ] Options
+- [ ] Mappings
+- [ ] Fuzzy search - fzf or Telescope
+- [ ] LSP - Lua, Rust
+- [ ] LSP - completion
+- [ ] Treesitter
+- [ ] Vimwiki
+- [ ] statusline
+
 ## References
 
 - https://github.com/nanotee/nvim-lua-guide
@@ -110,21 +122,9 @@ require'lualine'.setup {
 }
 
 require 'nvim-treesitter.configs'.setup {
+    ensure_installed = {'lua', 'rust', 'toml'},
     highlight = {
         enable = true,
     }
 }
-
---[[
-## TODO
-
-- [ ] Plugins
-- [ ] Options
-- [ ] Mappings
-- [ ] Fuzzy search - fzf or Telescope
-- [ ] Tree-sitter
-- [ ] LSP - Lua, Rust, JS
-- [ ] Vimwiki
-- [ ] lsp-status
---]]
 
