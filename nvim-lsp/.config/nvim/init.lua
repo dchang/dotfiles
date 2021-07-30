@@ -93,7 +93,7 @@ lspconfig.rust_analyzer.setup{
     capabilities = lsp_status.capabilities
 }
 
-api.nvim_exec('autocmd BufWritePre *.rs lua vim.lsp.buf.formatting()', false)
+api.nvim_exec('autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_seq_sync()', false)
 
 --require'plenary.reload'.reload_module('lualine', true)
 require'lualine'.setup {
