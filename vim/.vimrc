@@ -3,10 +3,10 @@ syntax on
 " options {
   set background=dark        " adjusts the default color groups
   set colorcolumn=100        " highlights screen columns
-  set expandtab              " use spaces for indents
   set noerrorbells           " disable bell for error messages
   set noswapfile             " disable swapfile creation
-  set number relativenumber  " show line number relative to current line
+  set relativenumber         " show line number relative to current line
+  set expandtab              " use spaces for indents
   set shiftwidth=4           " indent size
   set softtabstop=4          " tab size in insert mode
   set tabstop=4              " tab size
@@ -28,6 +28,7 @@ syntax on
 
   " yank from the cursor position to the end of the line like C and D ops
   nnoremap Y y$
+  nnoremap <leader>sv :source $MYVIMRC<CR>
 
   " toggle search highlight 
   nmap <silent> <leader>/ :set invhlsearch<CR>
@@ -35,18 +36,17 @@ syntax on
 
 " vim-plug {
   call plug#begin('~/.vim/plugged')
+  Plug 'tweekmonster/startuptime.vim'
   Plug 'lifepillar/vim-gruvbox8'
+  Plug 'junegunn/fzf.vim'
   Plug 'vimwiki/vimwiki'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-surround'
   Plug 'godlygeek/tabular'
-  Plug 'dstein64/vim-startuptime'
   call plug#end()
 " }
 
 " gruvbox {
-  let g:gruvbox_contrast_dark = 'hard'
   colorscheme gruvbox8_hard
 " }
 
