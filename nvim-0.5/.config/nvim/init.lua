@@ -42,7 +42,7 @@ opt.colorcolumn = '100'   -- highlight screen column
 opt.expandtab = true      -- use spaces for indents
 opt.tabstop = 4           -- tab size
 opt.shiftwidth = 0        -- use tabstop
-opt.noswapfile = true     -- disable swapfile creation
+opt.swapfile = true       -- disable swapfile creation
 --opt.list = true           -- show tabs
 
 g.mapleader = ' '
