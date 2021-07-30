@@ -30,6 +30,7 @@ require 'paq' {
     --'nvim-lua/plenary.nvim';
     'neovim/nvim-lspconfig';
     'nvim-lua/lsp-status.nvim';
+    'nvim-treesitter/nvim-treesitter';
     'hoob3rt/lualine.nvim';
     --'kyazdani42/nvim-web-devicons';
     --'ryanoasis/vim-devicons';
@@ -40,7 +41,7 @@ opt.colorcolumn = '100'   -- highlight screen column
 opt.expandtab = true      -- use spaces for indents
 opt.tabstop = 4           -- tab size
 opt.shiftwidth = 0        -- use tabstop
-opt.swapfile = true       -- disable swapfile creation
+opt.swapfile = false      -- disable swapfile creation
 opt.hidden = true         -- allow unsaved buffer change
 opt.termguicolors = true  -- enable 24-bit color
 --opt.list = true           -- show tabs
@@ -105,6 +106,12 @@ require'lualine'.setup {
         lualine_x = {require'lsp-status'.status},
         lualine_y = {'location'},
         lualine_z = {},
+    }
+}
+
+require 'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true,
     }
 }
 
