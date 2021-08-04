@@ -28,6 +28,7 @@ abbr -a c cargo
 eval (keychain -q --eval id_rsa)
 
 if test -e ~/.profile
-  bass source ~/.profile
+  #bass source ~/.profile
+  . ~/.profile
 end
 
