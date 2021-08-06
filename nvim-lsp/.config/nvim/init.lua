@@ -48,6 +48,10 @@ require 'paq' {
     'hoob3rt/lualine.nvim';
     --'kyazdani42/nvim-web-devicons';
     --'ryanoasis/vim-devicons';
+    'kabouzeid/nvim-lspinstall';
+    --'anott03/nvim-lspinstall';
+    --'alexaandru/nvim-lspupdate';
+    --'williamboman/nvim-lsp-installer';
 }
 
 opt.relativenumber = true -- show relative line numbers
@@ -142,15 +146,27 @@ inoremap('<C-d>', 'compe#scroll({ "delta": -4 })')
 --]]
 
 local lspconfig = require('lspconfig')
+local lspinstall = require'lspinstall'
 local lsp_status = require('lsp-status')
+lspinstall.setup()
 lsp_status.register_progress()
-lspconfig.rust_analyzer.setup{
-    on_attach = function(client, bufnr)
-        --require'completion'.on_attach(client, bufnr)
-        lsp_status.on_attach(client, bufnr)
-    end,
-    capabilities = lsp_status.capabilities
-}
+local servers = lspinstall.installed_servers()
+for _, server in pairs(servers) do
+    lspconfig[server].setup {
+        on_attach = function(client, bufnr)
+            --require'completion'.on_attach(client, bufnr)
+            lsp_status.on_attach(client, bufnr)
+        end,
+        capabilities = lsp_status.capabilities,
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { 'vim' }
+                }
+            }
+        }
+    }
+end
 
 api.nvim_exec('autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_seq_sync()', false)
 
@@ -173,4 +189,6 @@ require 'nvim-treesitter.configs'.setup {
         enable = true,
     }
 }
+
+
 
