@@ -13,6 +13,7 @@ syntax on
   set termguicolors          " enable 24-bit color in TUI
   set undodir=~/.vim/undodir " directory where undo file is stored
   set undofile               " save undo history to undo file
+  set shell=/bin/bash        " avoid fish shell slowdown
 " }
 
 " statusline {

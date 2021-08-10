@@ -62,6 +62,7 @@ opt.shiftwidth = 0        -- use tabstop
 opt.swapfile = false      -- disable swapfile creation
 opt.hidden = true         -- allow unsaved buffer change
 opt.termguicolors = true  -- enable 24-bit color
+opt.shell = '/bin/bash'   -- avoid fish shell slowdown
 --opt.list = true           -- show tabs
 
 cmd 'colorscheme gruvbox8_hard'
@@ -145,9 +146,9 @@ inoremap('<C-f>', 'compe#scroll({ "delta": +4 })')
 inoremap('<C-d>', 'compe#scroll({ "delta": -4 })')
 --]]
 
-local lspconfig = require('lspconfig')
+local lspconfig = require'lspconfig'
 local lspinstall = require'lspinstall'
-local lsp_status = require('lsp-status')
+local lsp_status = require'lsp-status'
 lspinstall.setup()
 lsp_status.register_progress()
 local servers = lspinstall.installed_servers()
@@ -189,6 +190,4 @@ require 'nvim-treesitter.configs'.setup {
         enable = true,
     }
 }
-
-
 
