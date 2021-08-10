@@ -12,9 +12,6 @@ if status is-login
   end
 end
 
-# fix small fzf delay caused by fish shell
-alias nvim 'SHELL=bash command nvim'
-
 # vim
 abbr -a v nvim
 abbr -a vw 'nvim -c VimwikiIndex -c "cd %:p:h"'
@@ -28,7 +25,6 @@ abbr -a c cargo
 eval (keychain -q --eval id_rsa)
 
 if test -e ~/.profile
-  #bass source ~/.profile
   . ~/.profile
 end
 
