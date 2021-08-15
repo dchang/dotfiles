@@ -71,8 +71,12 @@ g.mapleader = ' '
 g.vimwiki_list = { { path = '~/Documents/wiki', syntax = 'markdown', ext = '.md' } }
 
 local nnoremap = function(lhs, rhs) api.nvim_set_keymap('n', lhs, rhs, {noremap = true}) end
+local vnoremap = function(lhs, rhs) api.nvim_set_keymap('v', lhs, rhs, {noremap = true}) end
 
-nnoremap('Y', 'y$')
+nnoremap('Y', 'y$') -- yank from cursor to EOL
+nnoremap(';', ':')  -- enter from normal to command mode
+vnoremap(';', ':')  -- enter from visual to command mode
+
 nnoremap('<leader>sv', ':source $MYVIMRC<CR>')
 
 nnoremap('<leader>fw', ':Windows<CR>')

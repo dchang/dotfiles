@@ -29,6 +29,9 @@ syntax on
 
   " yank from the cursor position to the end of the line like C and D ops
   nnoremap Y y$
+  nnoremap ; :
+  vnoremap ; :
+
   nnoremap <leader>sv :source $MYVIMRC<CR>
 
   " toggle search highlight 
