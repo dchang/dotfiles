@@ -12,14 +12,15 @@ if status is-login
   end
 end
 
-# vim
+# abbrs
+abbr -a f 'find . | grep'
+abbr -a h 'history | grep'
+abbr -a mkdir 'mkdir -pv'
 abbr -a v nvim
 abbr -a vw 'nvim -c VimwikiIndex -c "cd %:p:h"'
 abbr -a vd 'nvim -c VimwikiMakeDiaryNote -c "cd %:p:h"'
 abbr -a vcv 'nvim ~/.vimrc -c "cd ~/.vim"'
 abbr -a vcf 'nvim ~/.config/fish/config.fish -c "cd %:p:h"'
-
-# rust
 abbr -a c cargo
 
 eval (keychain -q --eval id_rsa)
