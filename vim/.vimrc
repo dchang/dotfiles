@@ -35,7 +35,7 @@ syntax on
   nnoremap <leader>sv :source $MYVIMRC<CR>
 
   " toggle search highlight 
-  nmap <silent> <leader>/ :set invhlsearch<CR>
+  nmap <silent> <leader>/ :noh<CR>
 " }
 
 " vim-plug {
