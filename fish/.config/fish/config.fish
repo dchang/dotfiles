@@ -13,8 +13,8 @@ if status is-login
 end
 
 # abbrs
-abbr -a f 'find . | grep'
-abbr -a h 'history | grep'
+abbr -a f 'find . | rg'
+abbr -a h 'history | rg'
 abbr -a mkdir 'mkdir -pv'
 abbr -a v nvim
 abbr -a vw 'nvim -c VimwikiIndex -c "cd %:p:h"'
