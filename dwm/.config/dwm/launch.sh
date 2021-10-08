@@ -16,7 +16,7 @@ pbat() {
   re=': (\w*), (.*)%' 
   [[ $(acpi) =~ $re ]]
   [[ ${BASH_REMATCH[1]} = 'Discharging' ]] && icon=${icons:BASH_REMATCH[2] / 20:1} || icon=''
-  echo "${icon} ${BASH_REMATCH[2]}%"
+  echo "${icon}  ${BASH_REMATCH[2]}%"
 }
 
 pdate() {
