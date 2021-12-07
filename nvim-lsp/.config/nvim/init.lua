@@ -79,6 +79,7 @@ nnoremap(';', ':')  -- enter from normal to command mode
 vnoremap(';', ':')  -- enter from visual to command mode
 
 nnoremap('<leader>sv', ':source $MYVIMRC<CR>')
+nnoremap('<leader>ba', ':%bd<CR>')
 
 nnoremap('<leader>fw', ':Windows<CR>')
 nnoremap('<leader>fa', ':Files<CR>')

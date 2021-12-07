@@ -33,6 +33,7 @@ syntax on
   vnoremap ; :
 
   nnoremap <leader>sv :source $MYVIMRC<CR>
+  nnoremap <leader>ba :%bd<CR>
 
   " toggle search highlight 
   nmap <silent> <leader>/ :noh<CR>
