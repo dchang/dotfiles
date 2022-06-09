@@ -54,6 +54,7 @@ require 'paq' {
     --'williamboman/nvim-lsp-installer';
 }
 
+opt.paste = true          -- enable paste mode
 opt.number = true         -- show current line number
 opt.relativenumber = true -- show relative line numbers
 opt.colorcolumn = '100'   -- highlight screen column

@@ -5,6 +5,7 @@ syntax on
   set colorcolumn=100        " highlights screen columns
   set noerrorbells           " disable bell for error messages
   set noswapfile             " disable swapfile creation
+  set paste                  " enable paste mode
   set number relativenumber  " show current and relative line numbers
   set expandtab              " use spaces for indents
   set shiftwidth=4           " indent size
