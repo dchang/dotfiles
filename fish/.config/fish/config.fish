@@ -6,11 +6,7 @@ if not functions -q fisher
   fish -c fisher
 end
 
-if status is-login
-  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-    exec startx -- -keeptty
-  end
-end
+fish_add_path $HOME/.cargo/bin
 
 # abbrs
 abbr -a f 'find . | rg'
@@ -23,9 +19,4 @@ abbr -a vcv 'nvim ~/.vimrc -c "cd ~/.vim"'
 abbr -a vcf 'nvim ~/.config/fish/config.fish -c "cd %:p:h"'
 abbr -a c cargo
 
-eval (keychain -q --eval id_rsa)
-
-if test -e ~/.profile
-  . ~/.profile
-end
-
+eval (keychain -q --eval id_ed25519)
