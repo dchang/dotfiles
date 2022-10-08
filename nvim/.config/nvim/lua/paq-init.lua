@@ -10,7 +10,7 @@ require 'paq' {
     --'junegunn/fzf';
     --'junegunn/fzf.vim';
     'nvim-lua/plenary.nvim';
-    'nvim-telescope/telescope.nvim';
+    {'nvim-telescope/telescope.nvim', tag = '0.1.0'};
 
     'vimwiki/vimwiki';
     'neovim/nvim-lspconfig';

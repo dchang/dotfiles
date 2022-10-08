@@ -1,17 +1,10 @@
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
 vim.g.mapleader = ' '
 
-map('n', 'Y', 'y$') -- yank from cursor to EOL
-map('n', ';', ':')  -- enter from normal to command mode
-map('v', ';', ':')  -- enter from visual to command mode
+vim.keymap.set('n', 'Y', 'y$') -- yank from cursor to EOL
+vim.keymap.set({ 'n', 'v' }, ';', ':')
 
-map('n', '<leader>sv', ':source $MYVIMRC<CR>')
-map('n', '<leader>ba', ':%bd<CR>')
+vim.keymap.set('n', '<leader>sv', ':source $MYVIMRC<CR>')
+vim.keymap.set('n', '<leader>ba', ':%bd<CR>')
+
+vim.keymap.set('n', '<leader>/', ':noh<CR>', { silent = true })
 
