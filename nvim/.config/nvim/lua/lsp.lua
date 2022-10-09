@@ -32,16 +32,19 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
+vim.api.nvim_create_autocmd("BufWritePre", { callback = function() vim.lsp.buf.formatting_sync() end })
+
+--[[
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
+--]]
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
-    flags = lsp_flags,
+    --flags = lsp_flags,
     -- Server-specific settings...
     settings = {
       ["rust-analyzer"] = {}
     }
 }
-

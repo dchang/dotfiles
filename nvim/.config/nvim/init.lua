@@ -6,6 +6,7 @@ https://github.com/brainfucksec/neovim-lua
 require("paq-init")
 require("core/options")
 require("core/keymaps")
+require("core/statusline")
 require("lsp")
 require("plugins/nvim-treesitter")
 require("plugins/telescope")

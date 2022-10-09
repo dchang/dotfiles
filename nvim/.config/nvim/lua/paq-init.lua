@@ -12,19 +12,25 @@ require 'paq' {
     'nvim-lua/plenary.nvim';
     {'nvim-telescope/telescope.nvim', tag = '0.1.0'};
 
-    'vimwiki/vimwiki';
     'neovim/nvim-lspconfig';
     'nvim-treesitter/nvim-treesitter';
     --'kabouzeid/nvim-lspinstall';
-    --'lifepillar/vim-gruvbox8';
+
     --'nvim-lua/lsp-status.nvim';
     --'hoob3rt/lualine.nvim';
+    --'feline-nvim/feline.nvim';
+    'nvim-lualine/lualine.nvim';
+    'kyazdani42/nvim-web-devicons';
+
+    'vimwiki/vimwiki';
 
     --'tweekmonster/startuptime.vim';
 
+    --'lifepillar/vim-gruvbox8';
     --'folke/tokyonight.nvim';
     'rebelot/kanagawa.nvim';
     --'sainnhe/gruvbox-material';
+
 
     -- sandbox
     --'nvim-lua/plenary.nvim';
