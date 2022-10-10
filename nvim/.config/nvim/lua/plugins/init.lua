@@ -12,9 +12,9 @@ require 'paq' {
     'nvim-lua/plenary.nvim';
     { 'nvim-telescope/telescope.nvim', tag = '0.1.0' };
 
+    --'kabouzeid/nvim-lspinstall';
     'neovim/nvim-lspconfig';
     'nvim-treesitter/nvim-treesitter';
-    --'kabouzeid/nvim-lspinstall';
 
     --'nvim-lua/lsp-status.nvim';
     --'feline-nvim/feline.nvim';
