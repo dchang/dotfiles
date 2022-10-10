@@ -27,17 +27,18 @@ require 'paq' {
 
     --'lifepillar/vim-gruvbox8';
     --'folke/tokyonight.nvim';
-    'rebelot/kanagawa.nvim';
     --'sainnhe/gruvbox-material';
-
+    'rebelot/kanagawa.nvim';
 
     -- sandbox
-    --'nvim-lua/plenary.nvim';
+    --'folke/trouble.nvim';
+    --'folke/lsp-colors.nvim';
     --'nvim-lua/completion-nvim';
     --'hrsh7th/nvim-compe';
-    --'kyazdani42/nvim-web-devicons';
     --'ryanoasis/vim-devicons';
     --'anott03/nvim-lspinstall';
     --'alexaandru/nvim-lspupdate';
     --'williamboman/nvim-lsp-installer';
 }
+
+--require("trouble").setup()

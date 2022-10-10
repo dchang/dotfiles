@@ -46,3 +46,17 @@ require 'nvim-treesitter.configs'.setup {
 --vim.g.gruvbox_material_foreground = 'material'
 --vim.cmd 'colorscheme gruvbox-material'
 vim.cmd 'colorscheme kanagawa'
+
+-- diagnostic gutter icons
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+-- diagnostic virtual text prefix
+vim.diagnostic.config {
+  virtual_text = {
+    prefix = '●',
+  },
+}
