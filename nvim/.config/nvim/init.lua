@@ -12,5 +12,5 @@ require("plugins/lsp")
 require("plugins/note-taking")
 require("plugins/statusline")
 require("plugins/syntax")
-require("plugins/completion")
+--require("plugins/completion")
 
