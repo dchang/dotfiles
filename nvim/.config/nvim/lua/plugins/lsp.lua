@@ -29,7 +29,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  --vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', '<A-F>', function() vim.lsp.buf.formatting() end, bufopts)
 end
 
 vim.api.nvim_create_autocmd("BufWritePre", { callback = function() vim.lsp.buf.formatting_sync() end })
@@ -41,10 +41,12 @@ local lsp_flags = {
 }
 --]]
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+require('lspconfig')['tsserver'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 require('lspconfig')['rust_analyzer'].setup {
   on_attach = on_attach,
-  --flags = lsp_flags,
-  -- Server-specific settings...
   settings = {
     ["rust-analyzer"] = {}
   },

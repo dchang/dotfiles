@@ -1,4 +1,7 @@
 --[[
+Tested on nvim 0.7
+
+references:
 https://github.com/nanotee/nvim-lua-guide
 https://github.com/brainfucksec/neovim-lua
 --]]
@@ -12,5 +15,5 @@ require("plugins/lsp")
 require("plugins/note-taking")
 require("plugins/statusline")
 require("plugins/syntax")
---require("plugins/completion")
+require("plugins/completion")
 

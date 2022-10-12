@@ -12,7 +12,6 @@ require 'paq' {
     'nvim-lua/plenary.nvim';
     { 'nvim-telescope/telescope.nvim', tag = '0.1.0' };
 
-    --'kabouzeid/nvim-lspinstall';
     'neovim/nvim-lspconfig';
     'nvim-treesitter/nvim-treesitter';
 
@@ -25,8 +24,6 @@ require 'paq' {
     'L3MON4D3/LuaSnip';
     'saadparwaiz1/cmp_luasnip';
 
-    --'nvim-lua/lsp-status.nvim';
-    --'feline-nvim/feline.nvim';
     'nvim-lualine/lualine.nvim';
     'kyazdani42/nvim-web-devicons';
 
@@ -43,12 +40,5 @@ require 'paq' {
     -- sandbox
     --'folke/trouble.nvim';
     --'folke/lsp-colors.nvim';
-    --'nvim-lua/completion-nvim';
-    --'hrsh7th/nvim-compe';
-    --'ryanoasis/vim-devicons';
-    --'anott03/nvim-lspinstall';
-    --'alexaandru/nvim-lspupdate';
-    --'williamboman/nvim-lsp-installer';
 }
 
---require("trouble").setup()
