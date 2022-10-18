@@ -9,4 +9,6 @@ opt.shiftwidth = 0 -- use tabstop
 opt.swapfile = false -- disable swapfile creation
 opt.hidden = true -- allow unsaved buffer change
 opt.termguicolors = true -- enable 24-bit color
-opt.shell = '/bin/bash' -- avoid fish shell slowdown
+--opt.shell = '/bin/bash' -- avoid fish shell slowdown
+opt.scrolloff = 8
+opt.signcolumn = "yes"
