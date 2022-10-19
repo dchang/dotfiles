@@ -1,45 +1,37 @@
-local paq_path = vim.fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
-if vim.fn.empty(vim.fn.glob(paq_path)) > 0 then
-    vim.cmd('!git clone --depth=1 https://github.com/savq/paq-nvim ' .. paq_path)
-    vim.cmd('packadd paq-nvim')
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
-require 'paq' {
-    'savq/paq-nvim';
+local packer_bootstrap = ensure_packer()
 
-    --'junegunn/fzf';
-    --'junegunn/fzf.vim';
-    'nvim-lua/plenary.nvim';
-    { 'nvim-telescope/telescope.nvim', tag = '0.1.0' };
+return require('packer').startup(function(use)
+    use 'wbthomason/packer.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
+    use 'neovim/nvim-lspconfig'
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/nvim-cmp'
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'nvim-lualine/lualine.nvim'
+    use 'kyazdani42/nvim-web-devicons'
+    use 'vimwiki/vimwiki'
+    use { 'rebelot/kanagawa.nvim', commit = 'fc2e308' }
 
-    'neovim/nvim-lspconfig';
-    'nvim-treesitter/nvim-treesitter';
-
-    'hrsh7th/cmp-nvim-lsp';
-    'hrsh7th/cmp-buffer';
-    'hrsh7th/cmp-path';
-    'hrsh7th/cmp-cmdline';
-    --'hrsh7th/cmp-nvim-lua';
-    'hrsh7th/nvim-cmp';
-
-    'L3MON4D3/LuaSnip';
-    'saadparwaiz1/cmp_luasnip';
-
-    'nvim-lualine/lualine.nvim';
-    'kyazdani42/nvim-web-devicons';
-
-    { 'vimwiki/vimwiki' };
-
-    --'tweekmonster/startuptime.vim';
-    --'dstein64/vim-startuptime';
-
-    --'lifepillar/vim-gruvbox8';
-    --'folke/tokyonight.nvim';
-    --'sainnhe/gruvbox-material';
-    'rebelot/kanagawa.nvim';
-
-    -- sandbox
-    --'folke/trouble.nvim';
-    --'folke/lsp-colors.nvim';
-}
-
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+  end
+end)

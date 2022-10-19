@@ -40,12 +40,7 @@ require 'nvim-treesitter.configs'.setup {
   },
 }
 
---vim.cmd 'colorscheme gruvbox8_hard'
---vim.cmd 'colorscheme tokyonight-night'
---vim.g.gruvbox_material_background = 'hard'
---vim.g.gruvbox_material_foreground = 'material'
---vim.cmd 'colorscheme gruvbox-material'
-vim.cmd 'colorscheme kanagawa'
+vim.cmd("colorscheme kanagawa")
 
 -- diagnostic gutter icons
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
