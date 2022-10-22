@@ -40,8 +40,6 @@ require 'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.cmd("colorscheme kanagawa")
-
 -- diagnostic gutter icons
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do

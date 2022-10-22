@@ -27,13 +27,9 @@ return require('packer').startup(function(use)
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'vimwiki/vimwiki'
-    use 'rebelot/kanagawa.nvim'
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
+    use { 'rebelot/kanagawa.nvim', config = 'vim.cmd[[colorscheme kanagawa]]' }
+    -- use { 'folke/tokyonight.nvim', config = 'vim.cmd[[colorscheme tokyonight]]' }
+    use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
