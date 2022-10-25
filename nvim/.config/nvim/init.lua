@@ -1,10 +1,4 @@
---[[
-Tested on nvim 0.7
-
-references:
-https://github.com/nanotee/nvim-lua-guide
-https://github.com/brainfucksec/neovim-lua
---]]
+-- requires nvim 0.8+
 
 require("core/autocmds")
 require("core/options")
@@ -12,8 +6,5 @@ require("core/keymaps")
 require("plugins")
 require("plugins/fuzzy-finder")
 require("plugins/lsp")
-require("plugins/note-taking")
-require("plugins/statusline")
 require("plugins/syntax")
 require("plugins/completion")
-

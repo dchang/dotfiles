@@ -1,6 +1,6 @@
 -- Set up nvim-cmp.
-local cmp = require 'cmp'
-local luasnip = require("luasnip")
+local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -25,8 +25,8 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     ['<C-k>'] = cmp.mapping.select_prev_item(),
     ['<C-j>'] = cmp.mapping.select_next_item(),
-    
-	["<Tab>"] = cmp.mapping(function(fallback)
+
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
@@ -86,4 +86,3 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline', keyword_length = 3 }
   })
 })
-
