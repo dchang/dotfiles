@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use 'kyazdani42/nvim-web-devicons'
+  use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end }
   use { 'nvim-lualine/lualine.nvim', config = function() require('lualine').setup() end }
   use { 'rebelot/kanagawa.nvim', config = 'vim.cmd[[colorscheme kanagawa]]' }
   -- use { 'folke/tokyonight.nvim', config = 'vim.cmd[[colorscheme tokyonight]]' }
