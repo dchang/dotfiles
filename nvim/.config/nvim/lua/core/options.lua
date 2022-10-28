@@ -10,4 +10,4 @@ opt.swapfile = false -- disable swapfile creation
 opt.hidden = true -- allow unsaved buffer change
 opt.termguicolors = true -- enable 24-bit color
 opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor
-opt.signcolumn = "yes" -- always draw the signcolumn
+opt.signcolumn = 'yes' -- always draw the signcolumn
