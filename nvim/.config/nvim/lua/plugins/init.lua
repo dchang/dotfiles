@@ -52,8 +52,19 @@ return require('packer').startup(function(use)
         'vimwiki/vimwiki',
         config = function()
             vim.g.vimwiki_list = { { path = '~/Documents/wiki/', syntax = 'markdown', ext = '.md' } }
+            vim.g.vimwiki_global_ext = 0
         end
     }
+    --[[
+    use {
+        'lervag/wiki.vim',
+        config = function()
+            vim.g.wiki_root = '~/Documents/wiki'
+            vim.g.wiki_filetypes = { 'md' }
+            vim.g.wiki_link_extension = '.md'
+        end
+    }
+    --]]
 
     if packer_bootstrap then
         require('packer').sync()
