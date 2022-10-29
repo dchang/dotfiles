@@ -6,6 +6,7 @@ if not functions -q fisher
   fish -c fisher
 end
 
+fish_add_path $HOME/bin
 fish_add_path $HOME/.cargo/bin
 
 # abbrs
