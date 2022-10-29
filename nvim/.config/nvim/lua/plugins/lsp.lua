@@ -3,7 +3,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -27,16 +27,37 @@ vim.api.nvim_create_autocmd("BufWritePre", { callback = function() vim.lsp.buf.f
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local runtime_path = vim.split(package.path, ";")
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
 require('lspconfig')['rust_analyzer'].setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     settings = {
         ["rust-analyzer"] = {}
     },
-    capabilities = capabilities,
 }
 require('lspconfig')['sumneko_lua'].setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    settings = {
+        Lua = {
+            runtime = {
+                version = 'LuaJIT',
+                path = runtime_path,
+            },
+            diagnostics = {
+                globals = { 'vim' },
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file('', true),
+            },
+            telemetry = {
+                enable = false,
+            },
+        },
+    },
 }
 require('lspconfig')['tsserver'].setup {
     on_attach = on_attach,
