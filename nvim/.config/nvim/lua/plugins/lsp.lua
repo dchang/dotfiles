@@ -26,19 +26,25 @@ end
 vim.api.nvim_create_autocmd("BufWritePre", { callback = function() vim.lsp.buf.format() end })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local lspconfig = require('lspconfig')
+
+lspconfig.denols.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {
+        'markdown',
+    },
+}
+
+lspconfig.rust_analyzer.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
 
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
-
-require('lspconfig')['rust_analyzer'].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-        ["rust-analyzer"] = {}
-    },
-}
-require('lspconfig')['sumneko_lua'].setup {
+lspconfig.sumneko_lua.setup {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -59,7 +65,8 @@ require('lspconfig')['sumneko_lua'].setup {
         },
     },
 }
-require('lspconfig')['tsserver'].setup {
+
+lspconfig.tsserver.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
