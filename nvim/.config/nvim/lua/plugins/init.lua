@@ -19,7 +19,10 @@ return require('packer').startup(function(use)
         requires = { 'nvim-lua/plenary.nvim' }
     }
     use 'neovim/nvim-lspconfig'
-    use 'nvim-treesitter/nvim-treesitter'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update { with_sync = true } end
+    }
     use {
         'hrsh7th/nvim-cmp',
         requires = {
@@ -32,6 +35,7 @@ return require('packer').startup(function(use)
         }
     }
     use 'kyazdani42/nvim-web-devicons'
+    use 'elihunter173/dirbuf.nvim'
     use { 'nvim-lualine/lualine.nvim', config = function() require('lualine').setup() end }
     use { 'rebelot/kanagawa.nvim', config = 'vim.cmd[[colorscheme kanagawa]]' }
     -- use { 'folke/tokyonight.nvim', config = 'vim.cmd[[colorscheme tokyonight]]' }
