@@ -36,7 +36,21 @@ return require('packer').startup(function(use)
     }
     use 'kyazdani42/nvim-web-devicons'
     use 'elihunter173/dirbuf.nvim'
-    use { 'nvim-lualine/lualine.nvim', config = function() require('lualine').setup() end }
+    use {
+        'nvim-lualine/lualine.nvim',
+        config = function()
+            require('lualine').setup {
+                sections = {
+                    lualine_c = {
+                        {
+                            'filename',
+                            path = 1,
+                        }
+                    }
+                }
+            }
+        end
+    }
     use { 'rebelot/kanagawa.nvim', config = 'vim.cmd[[colorscheme kanagawa]]' }
     -- use { 'folke/tokyonight.nvim', config = 'vim.cmd[[colorscheme tokyonight]]' }
     use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
