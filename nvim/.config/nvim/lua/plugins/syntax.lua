@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-    ensure_installed = { "bash", "lua", "markdown", "markdown_inline", "regex", "rust" },
+    ensure_installed = { "bash", "lua", "markdown", "markdown_inline", "regex", "rust", "sql" },
     sync_install = false,
     auto_install = true,
     ignore_install = { "javascript" },

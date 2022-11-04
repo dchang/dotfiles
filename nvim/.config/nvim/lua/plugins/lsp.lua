@@ -66,6 +66,11 @@ lspconfig.sumneko_lua.setup {
     },
 }
 
+lspconfig.sqlls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
 lspconfig.tsserver.setup {
     on_attach = on_attach,
     capabilities = capabilities,

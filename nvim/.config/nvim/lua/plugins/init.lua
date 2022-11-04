@@ -54,7 +54,8 @@ return require('packer').startup(function(use)
     use { 'rebelot/kanagawa.nvim', config = 'vim.cmd[[colorscheme kanagawa]]' }
     -- use { 'folke/tokyonight.nvim', config = 'vim.cmd[[colorscheme tokyonight]]' }
     use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
-    -- use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end }
+    use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end }
+    --[[
     use {
         'folke/noice.nvim',
         config = function()
@@ -66,6 +67,7 @@ return require('packer').startup(function(use)
             -- 'rcarriga/nvim-notify',
         }
     }
+    --]]
     use {
         'vimwiki/vimwiki',
         config = function()
