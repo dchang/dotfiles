@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 
-vim.keymap.set({ 'n', 'v' }, ';', ':')
+vim.keymap.set({ 'n', 'v' }, '<leader><space>', ':')
 
 vim.keymap.set('n', '<leader>rl', ':luafile %<CR>') -- execute lua script in current buffer
 vim.keymap.set('n', '<leader>rr', ':source $MYVIMRC<CR>') -- reload config
