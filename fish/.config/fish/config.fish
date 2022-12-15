@@ -23,7 +23,3 @@ abbr -a tldrf 'tldr -l | fzf --preview "tldr {1} --color=always" --preview-windo
 
 eval (keychain -q --eval id_ed25519)
 
-# forward X11 to VcXsrv
-if grep -qi microsoft /proc/version
-  set -x DISPLAY $(ip route | awk '/^default/{print $3}'):0.0
-end
