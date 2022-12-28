@@ -6,7 +6,7 @@ vim.keymap.set('n', '<leader>l', ':bn<CR>') -- next buffer
 vim.keymap.set('n', '<leader>h', ':bp<CR>') -- previous buffer
 vim.keymap.set('n', '<leader>bd', ':bd<CR>') -- unload current buffer
 vim.keymap.set('n', '<leader>ba', ':%bd<CR>') -- unload all buffers
-vim.keymap.set('n', '<leader>bo', ':%bd|e#<CR>') -- unload all buffers except current
+vim.keymap.set('n', '<leader>bo', ':%bd|e#|bd#<CR>') -- unload all buffers except current
 
 vim.keymap.set('n', '<leader>/', ':noh<CR>', { silent = true }) -- stop highlighting search matches
 
