@@ -68,6 +68,8 @@ return require('packer').startup(function(use)
         }
     }
     --]]
+
+    --[[
     use {
         'vimwiki/vimwiki',
         config = function()
@@ -75,16 +77,8 @@ return require('packer').startup(function(use)
             vim.g.vimwiki_global_ext = 0
         end
     }
-    --[[
-    use {
-        'lervag/wiki.vim',
-        config = function()
-            vim.g.wiki_root = '~/Documents/wiki'
-            vim.g.wiki_filetypes = { 'md' }
-            vim.g.wiki_link_extension = '.md'
-        end
-    }
     --]]
+    use { 'renerocksai/telekasten.nvim' }
 
     if packer_bootstrap then
         require('packer').sync()
