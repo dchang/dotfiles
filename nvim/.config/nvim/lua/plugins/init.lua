@@ -15,9 +15,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     {
         "rebelot/kanagawa.nvim",
+        lazy = false,
         config = function()
-            vim.cmd("colorscheme kanagawa")
-        end
+            vim.cmd([[colorscheme kanagawa]])
+        end,
     },
     {
         "nvim-telescope/telescope.nvim",
