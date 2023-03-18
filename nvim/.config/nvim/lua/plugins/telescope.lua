@@ -27,5 +27,5 @@ return {
             end, {})
             vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {})
         end
-    },
+    }
 }
