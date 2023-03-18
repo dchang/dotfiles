@@ -3,13 +3,8 @@ return {
         "rebelot/kanagawa.nvim",
         lazy = false,
         config = function()
-            --vim.cmd([[colorscheme kanagawa]])
             vim.cmd.colorscheme("kanagawa")
         end,
-    },
-    {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" }
     },
     "neovim/nvim-lspconfig",
     {
@@ -32,18 +27,6 @@ return {
     "kyazdani42/nvim-web-devicons",
     "elihunter173/dirbuf.nvim",
     {
-        "nvim-lualine/lualine.nvim",
-        config = function()
-            require('lualine').setup {
-                sections = {
-                    lualine_c = {
-                        { 'filename', path = 1 }
-                    }
-                }
-            }
-        end
-    },
-    {
         "lewis6991/gitsigns.nvim",
         config = function()
             require('gitsigns').setup()
@@ -56,23 +39,4 @@ return {
         end
     },
     --"renerocksai/telekasten.nvim",
-    {
-        "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        opts = {
-            load = {
-                ["core.defaults"] = {}, -- Loads default behaviour
-                ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-                ["core.norg.dirman"] = { -- Manages Neorg workspaces
-                    config = {
-                        workspaces = {
-                            notes = "~/Documents/neorg",
-                        },
-                        default_workspace = "notes",
-                    },
-                },
-            },
-        },
-        dependencies = { { "nvim-lua/plenary.nvim" } },
-    },
 }
