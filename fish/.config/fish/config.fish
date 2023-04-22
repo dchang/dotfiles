@@ -10,6 +10,8 @@ fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 
+set -x WGPU_BACKEND vulkan
+
 # abbrs
 abbr -a f 'find . | rg'
 abbr -a h 'history | rg'
