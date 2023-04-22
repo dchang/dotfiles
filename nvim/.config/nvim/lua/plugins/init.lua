@@ -11,13 +11,20 @@ return {
     {
         "lewis6991/gitsigns.nvim",
         config = function()
-            require('gitsigns').setup()
+            require("gitsigns").setup()
         end
     },
     {
         "j-hui/fidget.nvim",
         config = function()
-            require('fidget').setup()
+            require("fidget").setup()
         end
+    },
+    {
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end,
+        build = ":MasonUpdate"
     },
 }
