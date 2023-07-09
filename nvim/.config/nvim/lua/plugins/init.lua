@@ -6,8 +6,14 @@ return {
             vim.cmd.colorscheme("kanagawa")
         end,
     },
-    "kyazdani42/nvim-web-devicons",
-    "elihunter173/dirbuf.nvim",
+    {
+        "kyazdani42/nvim-web-devicons",
+        --"nvim-tree/nvim-web-devicons",
+        --enabled = false,
+    },
+    {
+        "elihunter173/dirbuf.nvim",
+    },
     {
         "lewis6991/gitsigns.nvim",
         config = function()
