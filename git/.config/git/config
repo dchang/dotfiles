@@ -4,7 +4,7 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.config/git/.gitignore
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+[url "git@github.com:dchang"]
+	insteadOf = https://github.com/dchang
 [pull]
 	rebase = true
