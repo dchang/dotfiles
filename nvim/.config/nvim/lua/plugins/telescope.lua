@@ -26,6 +26,10 @@ return {
                 }
             end, {})
             vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {})
+
+            vim.keymap.set('n', '<leader>fw', function()
+                builtin.find_files({ cwd = "~/Documents/wiki" })
+            end, {})
         end
     }
 }
