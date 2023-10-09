@@ -12,3 +12,15 @@ vim.keymap.set('n', '<leader>/', ':noh<CR>', { silent = true }) -- stop highligh
 
 vim.keymap.set('n', '<leader>rl', ':luafile %<CR>') -- execute lua script in current buffer
 vim.keymap.set('n', '<leader>rr', ':source $MYVIMRC<CR>') -- reload config
+
+-- new diary entry
+vim.keymap.set('n', '<leader>wn', function()
+    local fn = vim.fn
+    local dir = fn.expand("~/Documents/wiki/diary/" .. os.date("%Y"))
+    if fn.isdirectory(dir) == 0 then
+        fn.mkdir(dir, "p")
+    end
+    local file = dir .. os.date("/%Y%m%d.md")
+    local bn = fn.bufnr(file, true)
+    vim.api.nvim_win_set_buf(0, bn)
+end)
