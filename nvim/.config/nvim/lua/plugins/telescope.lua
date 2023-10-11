@@ -3,7 +3,15 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
+        opts = {
+            defaults = {
+                layout_config = {
+                    horizontal = { preview_width = 0.6, width = 0.9 }
+                }
+            }
+        },
+        config = function(_, opts)
+            require("telescope").setup(opts)
             local lib = require("telescope.builtin")
 
             -- file pickers
@@ -15,8 +23,8 @@ return {
             vim.keymap.set("n", "<leader>fw", function()
                 lib.find_files({ cwd = "~/Documents/wiki" })
             end)
-            vim.keymap.set("n", "<leader>fj", function()
-                lib.find_files({ cwd = "~/Documents/wiki/diary" })
+            vim.keymap.set("n", "<leader>fq", function()
+                lib.live_grep({ cwd = "~/Documents/wiki" })
             end)
 
             -- vim pickers
