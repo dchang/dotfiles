@@ -6,6 +6,9 @@ nvim/.config/nvim/*
 !nvim/.config/nvim/init.lua
 !nvim/.config/nvim/lua/
 
+tmux/.config/tmux/*
+!tmux/.config/tmux/tmux.conf
+
 vim/.vim/*
 !vim/.vim/vimrc
 !vim/.vim/coc-settings.json
