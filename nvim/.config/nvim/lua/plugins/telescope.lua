@@ -8,11 +8,16 @@ return {
                 layout_config = {
                     horizontal = { preview_width = 0.6, width = 0.9 }
                 }
+            },
+            pickers = {
+                find_files = {
+                    find_command = { "rg", "--files", "--hidden", "--glob", "!.git" }
+                }
             }
         },
         config = function(_, opts)
             require("telescope").setup(opts)
-            local lib = require("telescope.builtin")
+            local tb = require("telescope.builtin")
             local vks = vim.keymap.set
             local cmd = function(fn, ...)
                 local args = { ... }
@@ -20,25 +25,31 @@ return {
             end
 
             -- file pickers
-            vks("n", "<leader>ff", cmd(lib.find_files, { find_command = { "rg", "--files", "--hidden", "-g", "!.git" } }))
-            vks("n", "<leader>fg", lib.git_files)
-            vks("n", "<leader>fs", lib.live_grep)
-            vks("n", "<leader>fw", cmd(lib.find_files, { cwd = "~/Documents/wiki" }))
-            vks("n", "<leader>fq", cmd(lib.live_grep, { cwd = "~/Documents/wiki" }))
+            vks("n", "<leader>ff", tb.find_files, { desc = "List CWD files" })
+            vks("n", "<leader>fa", tb.live_grep, { desc = "Search CWD files" })
+            vks("n", "<leader>fw", tb.grep_string, { desc = "Search CWD files for selection or cursor word" })
 
             -- vim pickers
-            vks("n", "<leader>fb", lib.buffers)
-            vks("n", "<leader>fv", lib.oldfiles)
-            vks("n", "<leader>fc", lib.commands)
-            vks("n", "<leader>fh", lib.help_tags)
-            vks("n", "<leader>fk", lib.keymaps)
+            vks("n", "<leader>fb", tb.buffers, { desc = "List open buffers" })
+            vks("n", "<leader>fo", tb.oldfiles, { desc = "List previously open files" })
+            vks("n", "<leader>fh", tb.help_tags, { desc = "List help tags" })
+            vks("n", "<leader>fk", tb.keymaps, { desc = "List normal mode keymappings" })
 
             -- lsp pickers
-            vks("n", "<leader>fr", lib.lsp_references)
-            vks("n", "<leader>fi", lib.lsp_incoming_calls)
-            vks("n", "<leader>fo", lib.lsp_outgoing_calls)
-            vks("n", "<leader>fl", cmd(lib.lsp_document_symbols, { symbols = { "enum", "function", "struct" } }))
-            vks("n", "<leader>fd", lib.diagnostics)
+            vks("n", "<leader>fs", cmd(tb.lsp_document_symbols, { symbols = { "enum", "function", "struct" } }),
+                { desc = "List current buffer symbols" })
+            vks("n", "<leader>fd", tb.diagnostics, { desc = "List diagnostics" })
+            vks("n", "<leader>fr", tb.lsp_references, { desc = "List references for cursor word" })
+
+            -- git pickers
+            vks("n", "<leader>gf", tb.git_files, { desc = "List git files" })
+            vks("n", "<leader>gc", tb.git_commits, { desc = "List git commits" })
+            vks("n", "<leader>gb", tb.git_branches, { desc = "List git branches" })
+            vks("n", "<leader>gs", tb.git_status, { desc = "List current changes" })
+
+            -- wiki pickers
+            vks("n", "<leader>wf", cmd(tb.find_files, { cwd = "~/Documents/wiki" }), { desc = "List wiki files" })
+            vks("n", "<leader>ww", cmd(tb.live_grep, { cwd = "~/Documents/wiki" }), { desc = "Search wiki files" })
         end
     }
 }
