@@ -22,6 +22,7 @@ abbr -a vd 'nvim -c VimwikiMakeDiaryNote -c "cd %:p:h"'
 abbr -a vcv 'nvim ~/.vimrc -c "cd ~/.vim"'
 abbr -a vcf 'nvim ~/.config/fish/config.fish -c "cd %:p:h"'
 abbr -a c cargo
+abbr -a cr 'RUST_LOG=debug cargo r --'
 abbr -a ccl 'cargo clippy'
 abbr -a tldrf 'tldr -l | fzf --preview "tldr {1} --color=always" --preview-window=right,80% | xargs tldr'
 
