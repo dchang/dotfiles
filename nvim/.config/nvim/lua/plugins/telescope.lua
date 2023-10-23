@@ -26,7 +26,7 @@ return {
 
             -- file pickers
             vks("n", "<leader>ff", tb.find_files, { desc = "List CWD files" })
-            vks("n", "<leader>fa", tb.live_grep, { desc = "Search CWD files" })
+            vks("n", "<leader>fg", tb.live_grep, { desc = "Search CWD files" })
             vks("n", "<leader>fw", tb.grep_string, { desc = "Search CWD files for selection or cursor word" })
 
             -- vim pickers
@@ -49,7 +49,7 @@ return {
 
             -- wiki pickers
             vks("n", "<leader>wf", cmd(tb.find_files, { cwd = "~/Documents/wiki" }), { desc = "List wiki files" })
-            vks("n", "<leader>ww", cmd(tb.live_grep, { cwd = "~/Documents/wiki" }), { desc = "Search wiki files" })
+            vks("n", "<leader>wg", cmd(tb.live_grep, { cwd = "~/Documents/wiki" }), { desc = "Search wiki files" })
         end
     }
 }
