@@ -19,10 +19,6 @@ return {
             require("telescope").setup(opts)
             local tb = require("telescope.builtin")
             local vks = vim.keymap.set
-            local cmd = function(fn, ...)
-                local args = { ... }
-                return function() fn(unpack(args)) end
-            end
 
             -- file pickers
             vks("n", "<leader>ff", tb.find_files, { desc = "List CWD files" })
@@ -36,7 +32,7 @@ return {
             vks("n", "<leader>fk", tb.keymaps, { desc = "List normal mode keymappings" })
 
             -- lsp pickers
-            vks("n", "<leader>fs", cmd(tb.lsp_document_symbols, { symbols = { "enum", "function", "struct" } }),
+            vks("n", "<leader>fs", function() tb.lsp_document_symbols({ ignore_symbols = "field" }) end,
                 { desc = "List current buffer symbols" })
             vks("n", "<leader>fd", tb.diagnostics, { desc = "List diagnostics" })
             vks("n", "<leader>fr", tb.lsp_references, { desc = "List references for cursor word" })
@@ -48,8 +44,10 @@ return {
             vks("n", "<leader>gs", tb.git_status, { desc = "List current changes" })
 
             -- wiki pickers
-            vks("n", "<leader>wf", cmd(tb.find_files, { cwd = "~/Documents/wiki" }), { desc = "List wiki files" })
-            vks("n", "<leader>wg", cmd(tb.live_grep, { cwd = "~/Documents/wiki" }), { desc = "Search wiki files" })
+            vks("n", "<leader>wf", function() tb.find_files({ cwd = "~/Documents/wiki" }) end,
+                { desc = "List wiki files" })
+            vks("n", "<leader>wg", function() tb.live_grep({ cwd = "~/Documents/wiki" }) end,
+                { desc = "Search wiki files" })
         end
     }
 }
