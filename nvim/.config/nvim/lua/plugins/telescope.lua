@@ -39,9 +39,11 @@ return {
 
             -- git pickers
             vks("n", "<leader>gf", tb.git_files, { desc = "List git files" })
-            vks("n", "<leader>gc", tb.git_commits, { desc = "List git commits" })
+            vks("n", "<leader>gc", tb.git_commits, { desc = "List all git commits" })
+            vks("n", "<leader>gv", tb.git_bcommits, { desc = "List buffer git commits" })
             vks("n", "<leader>gb", tb.git_branches, { desc = "List git branches" })
             vks("n", "<leader>gs", tb.git_status, { desc = "List current changes" })
+            vks("n", "<leader>gt", tb.git_status, { desc = "List stash items" })
 
             -- wiki pickers
             vks("n", "<leader>wf", function() tb.find_files({ cwd = "~/Documents/wiki" }) end,
