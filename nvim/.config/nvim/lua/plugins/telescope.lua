@@ -62,4 +62,12 @@ return {
         build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
         config = function() require("telescope").load_extension("fzf") end
     },
+    {
+        "crispgm/telescope-heading.nvim",
+        config = function()
+            require("telescope").load_extension("heading")
+            local vks = vim.keymap.set
+            vks("n", "<leader>ws", ":Telescope heading<cr>")
+        end
+    }
 }
