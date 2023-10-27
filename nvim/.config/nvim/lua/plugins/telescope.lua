@@ -30,12 +30,14 @@ return {
             vks("n", "<leader>fo", tb.oldfiles, { desc = "List previously open files" })
             vks("n", "<leader>fh", tb.help_tags, { desc = "List help tags" })
             vks("n", "<leader>fk", tb.keymaps, { desc = "List normal mode keymappings" })
+            vks("n", "<leader>fr", tb.resume, { desc = "List previous picker state" })
+            vks("n", "<leader>fm", tb.man_pages, { desc = "List man pages" })
+            vks("n", "<leader>f/", tb.search_history, { desc = "List search history" })
 
             -- lsp pickers
             vks("n", "<leader>fs", function() tb.lsp_document_symbols({ ignore_symbols = "field" }) end,
                 { desc = "List current buffer symbols" })
             vks("n", "<leader>fd", tb.diagnostics, { desc = "List diagnostics" })
-            vks("n", "<leader>fr", tb.lsp_references, { desc = "List references for cursor word" })
 
             -- git pickers
             vks("n", "<leader>gf", tb.git_files, { desc = "List git files" })
@@ -44,6 +46,9 @@ return {
             vks("n", "<leader>gb", tb.git_branches, { desc = "List git branches" })
             vks("n", "<leader>gs", tb.git_status, { desc = "List current changes" })
             vks("n", "<leader>gt", tb.git_status, { desc = "List stash items" })
+
+            -- lists pickers
+            vks("n", "<leader>ft", tb.builtin, { desc = "List built-in pickers" })
 
             -- wiki pickers
             vks("n", "<leader>wf", function() tb.find_files({ cwd = "~/Documents/wiki" }) end,
