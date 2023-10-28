@@ -69,5 +69,19 @@ return {
             local vks = vim.keymap.set
             vks("n", "<leader>ws", ":Telescope heading<cr>")
         end
-    }
+    },
+    {
+        "nvim-telescope/telescope-file-browser.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+        config = function()
+            require("telescope").setup()
+            require("telescope").load_extension("file_browser")
+            vim.api.nvim_set_keymap(
+                "n",
+                "<space>fe",
+                ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+                { noremap = true }
+            )
+        end
+    },
 }
