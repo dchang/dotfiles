@@ -14,8 +14,19 @@ return {
     },
     {
         "j-hui/fidget.nvim",
+        --enabled = false,
         config = function()
             require("fidget").setup()
+        end
+    },
+    {
+        "mrded/nvim-lsp-notify",
+        enabled = false,
+        dependencies = { "rcarriga/nvim-notify" },
+        config = function()
+            require("lsp-notify").setup({
+                notify = require("notify")
+            })
         end
     },
     {
