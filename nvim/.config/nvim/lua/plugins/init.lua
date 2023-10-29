@@ -47,6 +47,14 @@ return {
         end
     },
     {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeoutlen = 300
+        end,
+        opts = {},
+    },
+    {
         "stevearc/oil.nvim",
         enabled = false,
         config = function()
