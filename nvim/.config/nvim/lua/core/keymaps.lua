@@ -1,14 +1,17 @@
+local vks = vim.keymap.set
+
 vim.g.mapleader = ' '
 
-vim.keymap.set({ 'n', 'v' }, '<leader><space>', ':')
-vim.keymap.set('n', '<leader>l', ':bn<CR>') -- next buffer
-vim.keymap.set('n', '<leader>h', ':bp<CR>') -- previous buffer
-vim.keymap.set('n', '<leader>bd', ':bd<CR>') -- unload current buffer
-vim.keymap.set('n', '<leader>ba', ':%bd<CR>', { desc = "Close all buffers" })
-vim.keymap.set('n', '<leader>bo', ':%bd|e#|bd#<CR>', { desc = "Close all other buffers" })
-vim.keymap.set('n', '<leader>/', ':noh<CR>', { desc = "Disable search matches highlighting", silent = true })
-vim.keymap.set('n', '<leader>rl', ':luafile %<CR>') -- execute lua script in current buffer
---vim.keymap.set('n', '<leader>rr', ':source $MYVIMRC<CR>') -- reload config
+vks({ 'n', 'v' }, '<leader><space>', ':')
+vks('n', '<leader>l', ':bn<CR>') -- next buffer
+vks('n', '<leader>h', ':bp<CR>') -- previous buffer
+vks('n', '<leader>bd', ':bd<CR>') -- unload current buffer
+vks('n', '<leader>ba', ':%bd<CR>', { desc = "Close all buffers" })
+vks('n', '<leader>bo', ':%bd|e#|bd#<CR>', { desc = "Close all other buffers" })
+vks('n', '<leader>/', ':noh<CR>', { desc = "Disable search matches highlighting", silent = true })
+vks('n', '<leader>rl', ':luafile %<CR>') -- execute lua script in current buffer
+vks('n', '<leader>qq', ':q<cr>') -- quit neovim
+--vks('n', '<leader>rr', ':source $MYVIMRC<CR>') -- reload config
 
 local new_diary_entry = function()
     local fn = vim.fn
