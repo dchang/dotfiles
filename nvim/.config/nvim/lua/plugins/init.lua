@@ -7,11 +7,6 @@ return {
         end,
     },
     {
-        --"kyazdani42/nvim-web-devicons",
-        "nvim-tree/nvim-web-devicons",
-        enabled = false,
-    },
-    {
         "lewis6991/gitsigns.nvim",
         config = function()
             require("gitsigns").setup()
@@ -24,7 +19,16 @@ return {
         end
     },
     {
+        "stevearc/dressing.nvim",
+    },
+    {
+        --"kyazdani42/nvim-web-devicons",
+        "nvim-tree/nvim-web-devicons",
+        enabled = false,
+    },
+    {
         "williamboman/mason.nvim",
+        enabled = false,
         config = function()
             require("mason").setup()
         end,

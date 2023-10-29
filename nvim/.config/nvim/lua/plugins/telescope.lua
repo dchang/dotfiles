@@ -2,7 +2,9 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        },
         opts = {
             defaults = {
                 layout_config = {
@@ -17,6 +19,7 @@ return {
         },
         config = function(_, opts)
             require("telescope").setup(opts)
+
             local tb = require("telescope.builtin")
             local vks = vim.keymap.set
 
@@ -60,28 +63,22 @@ return {
     {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-        config = function() require("telescope").load_extension("fzf") end
+        config = function()
+            require("telescope").load_extension("fzf")
+        end
     },
     {
         "crispgm/telescope-heading.nvim",
         config = function()
             require("telescope").load_extension("heading")
-            local vks = vim.keymap.set
-            vks("n", "<leader>ws", ":Telescope heading<cr>")
+            vim.keymap.set("n", "<leader>ws", ":Telescope heading<cr>")
         end
     },
     {
         "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
         config = function()
-            require("telescope").setup()
             require("telescope").load_extension("file_browser")
-            vim.api.nvim_set_keymap(
-                "n",
-                "<space>fe",
-                ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-                { noremap = true }
-            )
+            vim.keymap.set("n", "<leader>fe", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
         end
     },
 }
