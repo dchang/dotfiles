@@ -43,14 +43,20 @@ return {
         end
     },
     {
-        "echasnovski/mini.nvim",
+        "echasnovski/mini.starter",
+        version = "*",
+        config = function()
+            require("mini.starter").setup()
+        end
+    },
+    {
+        "echasnovski/mini.files",
         enabled = false,
         version = "*",
         config = function()
             require("mini.files").setup()
             vim.keymap.set("n", "-", function() require("mini.files").open(vim.api.nvim_buf_get_name(0), false) end,
                 { desc = "Open parent directory" })
-
         end
     },
     {
