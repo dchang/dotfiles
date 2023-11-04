@@ -8,16 +8,11 @@ return {
     },
     {
         "lewis6991/gitsigns.nvim",
-        config = function()
-            require("gitsigns").setup()
-        end
+        opts = {},
     },
     {
         "j-hui/fidget.nvim",
-        --enabled = false,
-        config = function()
-            require("fidget").setup()
-        end
+        opts = {},
     },
     {
         "mrded/nvim-lsp-notify",
@@ -40,9 +35,7 @@ return {
     {
         "williamboman/mason.nvim",
         enabled = false,
-        config = function()
-            require("mason").setup()
-        end,
+        opts = {},
         build = ":MasonUpdate"
     },
     {
@@ -56,6 +49,10 @@ return {
         config = function()
             vim.keymap.set("n", "<leader>rm", "<cmd>:MarkdownPreview<cr>", { desc = "Preview markdown" })
         end
+    },
+    {
+        "numToStr/Comment.nvim",
+        opts = {},
     },
     {
         "folke/which-key.nvim",
@@ -76,9 +73,7 @@ return {
     {
         "echasnovski/mini.starter",
         version = "*",
-        config = function()
-            require("mini.starter").setup()
-        end
+        opts = {},
     },
     {
         "echasnovski/mini.files",
