@@ -26,58 +26,64 @@ return {
                 vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format { async = true } end, bufopts)
             end
 
-            -- rust
             lspconfig.rust_analyzer.setup {
                 on_attach = on_attach,
                 capabilities = capabilities,
             }
 
-            -- lua
-            local runtime_path = vim.split(package.path, ";")
-            table.insert(runtime_path, "lua/?.lua")
-            table.insert(runtime_path, "lua/?/init.lua")
-            lspconfig.lua_ls.setup {
-                on_attach = on_attach,
-                capabilities = capabilities,
-                settings = {
-                    Lua = {
-                        runtime = {
-                            version = 'LuaJIT',
-                            path = runtime_path,
-                        },
-                        diagnostics = {
-                            globals = { 'vim' },
-                        },
-                        workspace = {
-                            library = vim.api.nvim_get_runtime_file('', true),
-                        },
-                        telemetry = {
-                            enable = false,
-                        },
-                    },
-                },
-            }
-
-            -- sql
-            lspconfig.sqlls.setup {
-                on_attach = on_attach,
-                capabilities = capabilities,
-            }
-
-            -- typescript
             lspconfig.tsserver.setup {
                 on_attach = on_attach,
                 capabilities = capabilities,
             }
 
-            -- javascript
-            lspconfig.denols.setup {
+            lspconfig.lua_ls.setup {
                 on_attach = on_attach,
                 capabilities = capabilities,
-                filetypes = {
-                    'markdown',
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" },
+                        },
+                    },
                 },
             }
+
+            lspconfig.sqlls.setup {
+                on_attach = on_attach,
+                capabilities = capabilities,
+            }
+
+            lspconfig.marksman.setup {
+                on_attach = on_attach,
+                capabilities = capabilities,
+            }
+
+            lspconfig.taplo.setup {
+                on_attach = on_attach,
+                capabilities = capabilities,
+            }
         end
-    }
+    },
+    {
+        "williamboman/mason.nvim",
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+        },
+        config = function()
+            local mason = require("mason")
+            local mason_lspconfig = require("mason-lspconfig")
+            mason.setup()
+            mason_lspconfig.setup({
+                ensure_installed = {
+                    "rust_analyzer",
+                    "tsserver",
+                    "lua_ls",
+                    "sqlls",
+                    "marksman",
+                    "taplo",
+                },
+                automatic_installation = true,
+            })
+        end
+    },
 }

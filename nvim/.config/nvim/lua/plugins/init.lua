@@ -33,12 +33,6 @@ return {
         enabled = false,
     },
     {
-        "williamboman/mason.nvim",
-        enabled = false,
-        opts = {},
-        build = ":MasonUpdate"
-    },
-    {
         "iamcco/markdown-preview.nvim",
         --cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = "cd app && npm install",
