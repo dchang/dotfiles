@@ -1,7 +1,4 @@
-local g = vim.api.nvim_create_augroup("Default", {})
-
--- highlight yanks
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = g,
+    group = vim.api.nvim_create_augroup("highlight_on_yank", { clear = true }),
     callback = function() vim.highlight.on_yank() end
 })

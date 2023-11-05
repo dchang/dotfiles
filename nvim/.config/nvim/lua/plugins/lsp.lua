@@ -63,27 +63,5 @@ return {
                 capabilities = capabilities,
             }
         end
-    },
-    {
-        "williamboman/mason.nvim",
-        dependencies = {
-            "williamboman/mason-lspconfig.nvim",
-        },
-        config = function()
-            local mason = require("mason")
-            local mason_lspconfig = require("mason-lspconfig")
-            mason.setup()
-            mason_lspconfig.setup({
-                ensure_installed = {
-                    "rust_analyzer",
-                    "tsserver",
-                    "lua_ls",
-                    "sqlls",
-                    "marksman",
-                    "taplo",
-                },
-                automatic_installation = true,
-            })
-        end
-    },
+    }
 }
