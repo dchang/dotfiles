@@ -1,17 +1,32 @@
-local vks = vim.keymap.set
+local map = vim.keymap.set
 
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
-vks({ 'n', 'v' }, '<leader><space>', ':')
-vks('n', '<leader>l', ':bn<CR>') -- next buffer
-vks('n', '<leader>h', ':bp<CR>') -- previous buffer
-vks('n', '<leader>bd', ':bd<CR>') -- unload current buffer
-vks('n', '<leader>ba', ':%bd<CR>', { desc = "Close all buffers" })
-vks('n', '<leader>bo', ':%bd|e#|bd#<CR>', { desc = "Close all other buffers" })
-vks('n', '<leader>/', ':noh<CR>', { desc = "Disable search matches highlighting", silent = true })
-vks('n', '<leader>rl', ':luafile %<CR>') -- execute lua script in current buffer
-vks('n', '<leader>qq', ':q<cr>') -- quit neovim
---vks('n', '<leader>rr', ':source $MYVIMRC<CR>') -- reload config
+map({ "n", "v" }, "<leader><space>", ":")
+
+-- move lines
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+
+-- buffers
+map("n", "<leader>l", ":bn<CR>") -- next buffer
+map("n", "<leader>h", ":bp<CR>") -- previous buffer
+map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map("n", "<leader>bd", ":bd<CR>") -- unload current buffer
+map("n", "<leader>ba", ":%bd<CR>", { desc = "Close all buffers" })
+map("n", "<leader>bo", ":%bd|e#|bd#<CR>", { desc = "Close all other buffers" })
+
+-- misc
+map("n", "<leader>/", ":noh<CR>", { desc = "Disable search matches highlighting", silent = true })
+map("n", "<leader>rl", ":luafile %<CR>") -- execute lua script in current buffer
+map("n", "<leader>qq", ":qa<cr>", { desc = "Quit all" })
+--vks("n", "<leader>rr", ":source $MYVIMRC<CR>") -- reload config
 
 local new_diary_entry = function()
     local fn = vim.fn
@@ -23,4 +38,4 @@ local new_diary_entry = function()
     local bn = fn.bufnr(file, true)
     vim.api.nvim_win_set_buf(0, bn)
 end
-vim.keymap.set('n', '<leader>wn', new_diary_entry, { desc = "New diary entry" })
+vim.keymap.set("n", "<leader>wn", new_diary_entry, { desc = "New diary entry" })
