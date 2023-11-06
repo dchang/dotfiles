@@ -24,11 +24,27 @@ return {
                 vim.keymap.set('n', '<leader>cs', vim.lsp.buf.signature_help, bufopts)
                 vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, bufopts)
                 vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format { async = true } end, bufopts)
+                vim.keymap.set('n', '<leader>cd', '<cmd>RustOpenDocs<cr>', bufopts)
             end
 
             lspconfig.rust_analyzer.setup {
                 on_attach = on_attach,
                 capabilities = capabilities,
+                commands = {
+                    RustOpenDocs = {
+                        function()
+                            vim.lsp.buf_request(vim.api.nvim_get_current_buf(), 'experimental/externalDocs',
+                                vim.lsp.util.make_position_params(), function(err, url)
+                                    if err then
+                                        error(tostring(err))
+                                    else
+                                        vim.fn['netrw#BrowseX'](url, 0)
+                                    end
+                                end)
+                        end,
+                        description = 'Open documentation for the symbol under the cursor in default browser',
+                    },
+                },
             }
 
             lspconfig.tsserver.setup {
