@@ -25,6 +25,8 @@ abbr -a tldrf 'tldr -l | fzf --preview "tldr {1} --color=always" --preview-windo
 
 eval (keychain -q --eval id_ed25519)
 
+set -x EDITOR nvim
+
 if grep WSL2 /proc/version 
   set -x WGPU_BACKEND vulkan
   set -x BROWSER "powershell.exe /C start"
