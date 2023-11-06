@@ -10,9 +10,6 @@ fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 
-set -x WGPU_BACKEND vulkan
-
-# abbrs
 abbr -a f 'find . | rg'
 abbr -a h 'history | rg'
 abbr -a mkdir 'mkdir -pv'
@@ -27,4 +24,9 @@ abbr -a cu 'cargo update'
 abbr -a tldrf 'tldr -l | fzf --preview "tldr {1} --color=always" --preview-window=right,80% | xargs tldr'
 
 eval (keychain -q --eval id_ed25519)
+
+if grep WSL2 /proc/version 
+  set -x WGPU_BACKEND vulkan
+  set -x BROWSER "powershell.exe /C start"
+end
 
