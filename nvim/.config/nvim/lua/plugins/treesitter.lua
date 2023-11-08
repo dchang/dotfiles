@@ -2,9 +2,9 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
-            require('nvim-treesitter.install').update { with_sync = true }
+            require("nvim-treesitter.install").update { with_sync = true }
 
-            require 'nvim-treesitter.configs'.setup {
+            require("nvim-treesitter.configs").setup {
                 ensure_installed = { "bash", "lua", "markdown", "markdown_inline", "regex", "rust", "sql" },
                 sync_install = false,
                 auto_install = true,
@@ -22,19 +22,16 @@ return {
                 },
             }
 
-            -- diagnostic gutter icons
-            local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-            for type, icon in pairs(signs) do
-                local hl = "DiagnosticSign" .. type
+            local icons = require("core").icons
+            local signs = {
+                DiagnosticSignError = icons.error,
+                DiagnosticSignWarn = icons.warn,
+                DiagnosticSignInfo = icons.info,
+                DiagnosticSignHint = icons.hint,
+            }
+            for hl, icon in pairs(signs) do
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
-
-            -- diagnostic virtual text prefix
-            vim.diagnostic.config {
-                virtual_text = {
-                    prefix = '●',
-                },
-            }
         end
     }
 }

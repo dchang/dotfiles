@@ -2,9 +2,26 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         config = function()
-            require('lualine').setup {
+            local icons = require("core").icons
+            require("lualine").setup {
                 sections = {
-                    lualine_c = { { 'filename', path = 1, } }
+                    lualine_a = { "mode" },
+                    lualine_b = {
+                        "branch",
+                        "diff",
+                        {
+                            "diagnostics",
+                            symbols = {
+                                error = icons.error,
+                                warn = icons.warn,
+                                info = icons.info,
+                                hint = icons.hint,
+                            }
+                        }
+                    },
+                    lualine_c = {
+                        { "filename", path = 1, }
+                    }
                 }
             }
         end
