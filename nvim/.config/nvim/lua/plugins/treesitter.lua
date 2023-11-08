@@ -32,6 +32,9 @@ return {
             for hl, icon in pairs(signs) do
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
+            vim.diagnostic.config({
+                severity_sort = true,
+            })
         end
     }
 }
