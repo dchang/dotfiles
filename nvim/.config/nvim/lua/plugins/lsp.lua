@@ -78,6 +78,21 @@ return {
                 on_attach = on_attach,
                 capabilities = capabilities,
             }
+
+            local icons = require("core").icons
+            local signs = {
+                Error = icons.error,
+                Warn = icons.warn,
+                Info = icons.info,
+                Hint = icons.hint,
+            }
+            for name, icon in pairs(signs) do
+                name = "DiagnosticSign" .. name
+                vim.fn.sign_define(name, { text = icon, texthl = name, numhl = name })
+            end
+            vim.diagnostic.config({
+                severity_sort = true,
+            })
         end
     }
 }

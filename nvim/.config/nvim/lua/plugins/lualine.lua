@@ -8,7 +8,14 @@ return {
                     lualine_a = { "mode" },
                     lualine_b = {
                         "branch",
-                        "diff",
+                        {
+                            "diff",
+                            symbols = {
+                                added = icons.added,
+                                modified = icons.modified,
+                                removed = icons.removed,
+                            },
+                        },
                         {
                             "diagnostics",
                             symbols = {
@@ -16,12 +23,12 @@ return {
                                 warn = icons.warn,
                                 info = icons.info,
                                 hint = icons.hint,
-                            }
-                        }
+                            },
+                        },
                     },
                     lualine_c = {
                         { "filename", path = 1, }
-                    }
+                    },
                 }
             }
         end

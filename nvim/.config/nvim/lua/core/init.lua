@@ -1,8 +1,11 @@
 return {
     icons = {
-        error = " ",
-        warn  = " ",
-        hint  = " ",
-        info  = " ",
+        error    = " ",
+        warn     = " ",
+        hint     = " ",
+        info     = " ",
+        added    = " ",
+        modified = " ",
+        removed  = " ",
     },
 }
