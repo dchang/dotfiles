@@ -27,7 +27,7 @@ eval (keychain -q --eval id_ed25519)
 
 set -x EDITOR nvim
 
-if grep WSL2 /proc/version 
+if grep WSL2 /proc/version > /dev/null
   set -x WGPU_BACKEND vulkan
   set -x BROWSER "powershell.exe /C start"
 end
