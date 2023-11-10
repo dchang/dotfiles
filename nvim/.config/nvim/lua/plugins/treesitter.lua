@@ -1,11 +1,15 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        -- enabled = false,
         config = function()
             -- require("nvim-treesitter.install").update({ with_sync = true })
             require("nvim-treesitter.configs").setup({
                 ensure_installed = {
                     "bash",
+                    "diff",
+                    "git_rebase",
+                    "gitcommit",
                     "lua",
                     "markdown",
                     "markdown_inline",
