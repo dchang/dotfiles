@@ -8,13 +8,21 @@ return {
         opts = {
             defaults = {
                 layout_config = {
-                    horizontal = { preview_width = 0.6, width = 0.9 }
-                }
+                    -- horizontal = { preview_width = 0.6, width = 0.9, prompt_position = "top" },
+                    prompt_position = "top",
+                    mirror = true,
+                },
+                layout_strategy = "vertical",
+                sorting_strategy = "ascending",
             },
             pickers = {
                 find_files = {
                     find_command = { "rg", "--files", "--hidden", "--glob", "!.git" }
-                }
+                },
+                live_grep = {
+                    glob_pattern = { "!Cargo.lock", "!package-lock.json" },
+                    additional_args = { "--hidden" },
+                },
             }
         },
         config = function(_, opts)
@@ -38,8 +46,9 @@ return {
             vks("n", "<leader>f/", tb.search_history, { desc = "List search history" })
 
             -- lsp pickers
-            vks("n", "<leader>fs", function() tb.lsp_document_symbols({ ignore_symbols = "field" }) end,
-                { desc = "List current buffer symbols" })
+            vks("n", "<leader>fs", function()
+                tb.lsp_document_symbols({ ignore_symbols = "field" })
+            end, { desc = "List current buffer symbols" })
             vks("n", "<leader>fd", tb.diagnostics, { desc = "List diagnostics" })
 
             -- git pickers
