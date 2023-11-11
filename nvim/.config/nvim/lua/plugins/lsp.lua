@@ -80,7 +80,7 @@ return {
                 capabilities = capabilities,
             }
 
-            local icons = require("core").icons
+            local icons = require("config").icons
             local signs = {
                 Error = icons.error,
                 Warn = icons.warn,

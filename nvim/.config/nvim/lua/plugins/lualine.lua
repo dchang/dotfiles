@@ -5,7 +5,7 @@ return {
             vim.g.lualine_laststatus = vim.o.laststatus
         end, ]]
         opts = function()
-            local icons = require("core").icons
+            local icons = require("config").icons
             return {
                 options = {
                     -- globalstatus = true,
