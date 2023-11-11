@@ -1,20 +1,34 @@
 return {
     {
         "nvim-lualine/lualine.nvim",
-        config = function()
+        --[[ init = function()
+            vim.g.lualine_laststatus = vim.o.laststatus
+        end, ]]
+        opts = function()
             local icons = require("core").icons
-            require("lualine").setup {
+            return {
+                options = {
+                    -- globalstatus = true,
+                    disabled_filetypes = { statusline = { "starter" } },
+                    --[[ refresh = {
+                        statusline = 200,
+                    } ]]
+                },
                 sections = {
                     lualine_a = { "mode" },
                     lualine_b = {
-                        "branch",
+                        { "branch", icon = "" },
+                    },
+                    lualine_c = {
+                        { "filetype", separator = "", icon_only = true, padding = { left = 1, right = 0 } },
                         {
-                            "diff",
+                            "filename",
+                            separator = "",
+                            path = 1,
                             symbols = {
-                                added = icons.added,
                                 modified = icons.modified,
-                                removed = icons.removed,
-                            },
+                                readonly = icons.readonly,
+                            }
                         },
                         {
                             "diagnostics",
@@ -26,8 +40,21 @@ return {
                             },
                         },
                     },
-                    lualine_c = {
-                        { "filename", path = 1, }
+                    lualine_x = {
+                    },
+                    lualine_y = {
+                        {
+                            "diff",
+                            symbols = {
+                                added = icons.added,
+                                modified = icons.modified,
+                                removed = icons.removed,
+                            },
+                        },
+                    },
+                    lualine_z = {
+                        { "progress", padding = { left = 1, right = 0 }, separator = " " },
+                        { "location", padding = { left = 0, right = 1 } },
                     },
                 }
             }

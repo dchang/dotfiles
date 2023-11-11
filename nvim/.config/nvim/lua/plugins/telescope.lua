@@ -9,10 +9,11 @@ return {
             defaults = {
                 layout_config = {
                     -- horizontal = { preview_width = 0.6, width = 0.9, prompt_position = "top" },
+                    preview_width = 0.618,
                     prompt_position = "top",
-                    mirror = true,
+                    -- mirror = true,
                 },
-                layout_strategy = "vertical",
+                -- layout_strategy = "vertical",
                 sorting_strategy = "ascending",
             },
             pickers = {

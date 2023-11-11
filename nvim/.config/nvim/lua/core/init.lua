@@ -7,5 +7,6 @@ return {
         added    = " ",
         modified = " ",
         removed  = " ",
+        readonly = " ",
     },
 }
