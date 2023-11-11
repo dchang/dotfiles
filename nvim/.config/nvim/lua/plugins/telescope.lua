@@ -21,7 +21,7 @@ return {
                     find_command = { "rg", "--files", "--hidden", "--glob", "!.git" }
                 },
                 live_grep = {
-                    glob_pattern = { "!Cargo.lock", "!package-lock.json" },
+                    glob_pattern = { "!.git", "!Cargo.lock", "!package-lock.json" },
                     additional_args = { "--hidden" },
                 },
             }

@@ -4,7 +4,6 @@ opt.colorcolumn = "100"   -- highlight screen column
 opt.cursorline = true     -- highlight current line
 opt.expandtab = true      -- use spaces for indents
 opt.hidden = true         -- allow unsaved buffer change
--- opt.laststatus = 3        -- global statusline
 opt.number = true         -- show current line number
 opt.relativenumber = true -- show relative line numbers
 opt.scrolloff = 4         -- minimal number of screen lines to keep above and below the cursor
