@@ -85,7 +85,15 @@ return {
     {
         "echasnovski/mini.starter",
         version = "*",
-        opts = {},
+        config = function()
+            local ms = require("mini.starter")
+            ms.setup({
+                items = {
+                    ms.sections.recent_files(10, true),
+                    ms.sections.builtin_actions(),
+                },
+            })
+        end,
     },
     {
         "echasnovski/mini.files",

@@ -31,6 +31,8 @@ return {
                                 readonly = icons.readonly,
                             }
                         },
+                    },
+                    lualine_x = {
                         {
                             "diagnostics",
                             symbols = {
@@ -40,8 +42,6 @@ return {
                                 hint = icons.hint,
                             },
                         },
-                    },
-                    lualine_x = {
                     },
                     lualine_y = {
                         {
