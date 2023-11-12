@@ -56,10 +56,19 @@ return {
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        init = function()
-            vim.o.timeoutlen = 300
-        end,
-        opts = {},
+        config = function()
+            local wk = require("which-key")
+            wk.setup()
+            wk.register({
+                ["<leader>b"] = { "+buffer" },
+                ["<leader>c"] = { "+code" },
+                ["<leader>f"] = { "+file/find" },
+                ["<leader>g"] = { "+git" },
+                ["<leader>q"] = { "+quit" },
+                ["<leader>r"] = { "+run" },
+                ["<leader>w"] = { "+wiki" },
+            })
+        end
     },
     {
         "lukas-reineke/indent-blankline.nvim",

@@ -10,7 +10,8 @@ return {
             defaults = {
                 layout_config = {
                     -- horizontal = { preview_width = 0.6, width = 0.9, prompt_position = "top" },
-                    preview_width = 0.618,
+                    horizontal = { preview_width = 0.618 },
+                    -- preview_width = 0.618,
                     prompt_position = "top",
                     -- mirror = true,
                 },

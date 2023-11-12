@@ -1,4 +1,5 @@
 local opt = vim.opt
+local o = vim.o
 
 opt.colorcolumn = "100"   -- highlight screen column
 opt.cursorline = true     -- highlight current line
@@ -12,3 +13,5 @@ opt.showmode = false      -- redundant with statusline
 opt.signcolumn = "yes"    -- always draw the signcolumn
 opt.swapfile = false      -- disable swapfile creation
 opt.tabstop = 4           -- tab size
+
+o.timeoutlen = 300        -- ms to wait for a mapped sequence to complete
