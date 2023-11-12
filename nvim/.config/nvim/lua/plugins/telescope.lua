@@ -80,6 +80,7 @@ return {
     },
     {
         "nvim-telescope/telescope-file-browser.nvim",
+        enabled = false,
         config = function()
             require("telescope").load_extension("file_browser")
             vim.keymap.set("n", "<leader>fe", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")

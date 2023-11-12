@@ -28,6 +28,23 @@ return {
                 vim.keymap.set('n', '<leader>cd', '<cmd>RustOpenDocs<cr>', bufopts)
             end
 
+            lspconfig.lua_ls.setup {
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" },
+                        },
+                    },
+                },
+            }
+
+            lspconfig.marksman.setup {
+                on_attach = on_attach,
+                capabilities = capabilities,
+            }
+
             lspconfig.rust_analyzer.setup {
                 on_attach = on_attach,
                 capabilities = capabilities,
@@ -48,34 +65,17 @@ return {
                 },
             }
 
-            lspconfig.tsserver.setup {
-                on_attach = on_attach,
-                capabilities = capabilities,
-            }
-
-            lspconfig.lua_ls.setup {
-                on_attach = on_attach,
-                capabilities = capabilities,
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { "vim" },
-                        },
-                    },
-                },
-            }
-
             lspconfig.sqlls.setup {
                 on_attach = on_attach,
                 capabilities = capabilities,
             }
 
-            lspconfig.marksman.setup {
+            lspconfig.taplo.setup {
                 on_attach = on_attach,
                 capabilities = capabilities,
             }
 
-            lspconfig.taplo.setup {
+            lspconfig.tsserver.setup {
                 on_attach = on_attach,
                 capabilities = capabilities,
             }
