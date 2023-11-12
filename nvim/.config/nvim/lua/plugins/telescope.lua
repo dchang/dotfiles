@@ -2,6 +2,7 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
+        event = "VeryLazy",
         dependencies = {
             "nvim-lua/plenary.nvim"
         },
@@ -72,6 +73,7 @@ return {
     },
     {
         "nvim-telescope/telescope-fzf-native.nvim",
+        event = "VeryLazy",
         build =
         "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
         config = function()
@@ -81,6 +83,7 @@ return {
     {
         "nvim-telescope/telescope-file-browser.nvim",
         enabled = false,
+        event = "VeryLazy",
         config = function()
             require("telescope").load_extension("file_browser")
             vim.keymap.set("n", "<leader>fe", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")

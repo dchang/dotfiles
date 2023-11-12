@@ -8,15 +8,18 @@ return {
     },
     {
         "lewis6991/gitsigns.nvim",
+        event = "VeryLazy",
         opts = {},
     },
     {
         "j-hui/fidget.nvim",
+        event = "VeryLazy",
         opts = {},
     },
     {
         "mrded/nvim-lsp-notify",
         enabled = false,
+        event = "VeryLazy",
         dependencies = { "rcarriga/nvim-notify" },
         config = function()
             require("lsp-notify").setup({
@@ -26,12 +29,15 @@ return {
     },
     {
         "stevearc/dressing.nvim",
+        event = "VeryLazy",
     },
     {
         "nvim-tree/nvim-web-devicons",
+        event = "VeryLazy",
     },
     {
         "iamcco/markdown-preview.nvim",
+        event = "VeryLazy",
         --cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = "cd app && npm install",
         init = function()
@@ -44,6 +50,7 @@ return {
     },
     {
         "numToStr/Comment.nvim",
+        event = "VeryLazy",
         opts = {},
     },
     {
@@ -56,6 +63,7 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
+        event = "VeryLazy",
         main = "ibl",
         opts = {
             indent = {
@@ -72,12 +80,13 @@ return {
     },
     {
         "echasnovski/mini.files",
+        event = "VeryLazy",
         version = "*",
         config = function()
             require("mini.files").setup()
             vim.keymap.set("n", "<leader>e",
                 function()
-                    require("mini.files").open(vim.api.nvim_buf_get_name(0), false)
+                    require("mini.files").open(vim.api.nvim_buf_get_name(0))
                 end,
                 { desc = "Open parent directory" })
         end

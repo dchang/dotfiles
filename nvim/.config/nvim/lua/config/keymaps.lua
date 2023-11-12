@@ -13,8 +13,8 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- buffers
-map("n", "<leader>l", ":bn<CR>") -- next buffer
-map("n", "<leader>h", ":bp<CR>") -- previous buffer
+map("n", "<leader>l", ":bn<CR>", { desc = "Next buffer" })
+map("n", "<leader>h", ":bp<CR>", { desc = "Previous buffer" })
 map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
@@ -23,7 +23,7 @@ map("n", "<leader>ba", ":%bd<CR>", { desc = "Close all buffers" })
 map("n", "<leader>bo", ":%bd|e#|bd#<CR>", { desc = "Close all other buffers" })
 
 -- misc
-map("n", "<leader>/", ":noh<CR>", { desc = "Disable search matches highlighting", silent = true })
+map("n", "<leader>/", ":noh<CR>", { desc = "Clear search", silent = true })
 map("n", "<leader>rl", ":luafile %<CR>") -- execute lua script in current buffer
 map("n", "<leader>qq", ":qa<cr>", { desc = "Quit all" })
 --vks("n", "<leader>rr", ":source $MYVIMRC<CR>") -- reload config
