@@ -126,4 +126,9 @@ return {
                 { desc = "Open parent directory" })
         end
     },
+    {
+        "echasnovski/mini.pairs",
+        event = "VeryLazy",
+        opts = {},
+    },
 }
