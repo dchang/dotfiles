@@ -49,10 +49,13 @@ return {
             vks("n", "<leader>f/", tb.search_history, { desc = "List search history" })
 
             -- lsp pickers
-            vks("n", "<leader>fs", function()
-                tb.lsp_document_symbols({ ignore_symbols = "field" })
-            end, { desc = "List current buffer symbols" })
+            vks("n", "<leader>fs", function() tb.lsp_document_symbols({ ignore_symbols = "field" }) end,
+                { desc = "List current buffer symbols" })
             vks("n", "<leader>fd", tb.diagnostics, { desc = "List diagnostics" })
+            vks("n", "gd", tb.lsp_definitions, { desc = "Goto definition" })
+            vks("n", "gi", tb.lsp_implementations, { desc = "Goto implementation" })
+            vks("n", "gr", tb.lsp_references, { desc = "Goto reference" })
+            vks("n", "gy", tb.lsp_type_definitions, { desc = "Goto type definition" })
 
             -- git pickers
             vks("n", "<leader>gf", tb.git_files, { desc = "List git files" })

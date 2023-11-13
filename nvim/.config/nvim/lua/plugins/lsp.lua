@@ -14,11 +14,8 @@ return {
             local on_attach = function(_, bufnr)
                 vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = "LSP Declaration" })
-                vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "LSP Definition" })
-                vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = "LSP implementation" })
-                vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = "LSP References" })
                 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "LSP Hover" })
+                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = "Jump to declaration" })
                 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "LSP code actions" })
                 vim.keymap.set('n', '<leader>cs', vim.lsp.buf.signature_help, { desc = "LSP signature help" })
                 vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = "LSP rename" })
