@@ -106,10 +106,22 @@ return {
         config = function()
             local ms = require("mini.starter")
             ms.setup({
+                evaluate_single = true,
                 items = {
                     ms.sections.recent_files(10, true),
+                    { name = "Lazy",  action = "Lazy",  section = "Config" },
+                    { name = "Mason", action = "Mason", section = "Config" },
                     ms.sections.builtin_actions(),
                 },
+            })
+            vim.api.nvim_create_autocmd("User", {
+                pattern = "LazyVimStarted",
+                callback = function()
+                    local stats = require("lazy").stats()
+                    local t = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+                    ms.config.footer = "⚡Loaded " .. stats.count .. " plugins in " .. t .. "ms"
+                    pcall(ms.refresh)
+                end,
             })
         end,
     },
