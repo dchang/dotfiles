@@ -6,6 +6,7 @@ opt.cursorline = true     -- highlight current line
 opt.expandtab = true      -- use spaces for indents
 opt.hidden = true         -- allow unsaved buffer change
 opt.number = true         -- show current line number
+opt.pumheight = 10        -- popup menu max number of items
 opt.relativenumber = true -- show relative line numbers
 opt.scrolloff = 4         -- minimal number of screen lines to keep above and below the cursor
 opt.shiftwidth = 0        -- use tabstop
