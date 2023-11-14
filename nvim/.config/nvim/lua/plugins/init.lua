@@ -26,12 +26,12 @@ return {
     },
     {
         "lewis6991/gitsigns.nvim",
-        event = "VeryLazy",
+        event = "BufAdd",
         opts = {},
     },
     {
         "j-hui/fidget.nvim",
-        event = "VeryLazy",
+        event = "BufAdd",
         opts = {},
     },
     {
@@ -47,7 +47,7 @@ return {
     },
     {
         "stevearc/dressing.nvim",
-        event = "VeryLazy",
+        event = "BufAdd",
     },
     {
         "nvim-tree/nvim-web-devicons",
@@ -64,7 +64,7 @@ return {
     },
     {
         "numToStr/Comment.nvim",
-        event = "VeryLazy",
+        event = "BufAdd",
         opts = {},
     },
     {
@@ -86,7 +86,7 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
-        event = "VeryLazy",
+        event = "BufAdd",
         main = "ibl",
         opts = {
             indent = {
@@ -123,7 +123,7 @@ return {
     },
     {
         "echasnovski/mini.files",
-        event = "VeryLazy",
+        event = "BufAdd",
         version = "*",
         config = function()
             require("mini.files").setup()
@@ -136,7 +136,7 @@ return {
     },
     {
         "echasnovski/mini.pairs",
-        event = "VeryLazy",
+        event = "BufAdd",
         opts = {},
     },
 }

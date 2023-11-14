@@ -1,7 +1,7 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        event = "VeryLazy",
+        event = "BufAdd",
         config = function()
             -- require("nvim-treesitter.install").update({ with_sync = true })
             require("nvim-treesitter.configs").setup({
