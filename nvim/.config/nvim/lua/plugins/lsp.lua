@@ -4,7 +4,6 @@ return {
         event = "VeryLazy",
         config = function()
             local lspconfig = require('lspconfig')
-            local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
             vim.api.nvim_create_autocmd("BufWritePre", { callback = function() vim.lsp.buf.format() end })
 
@@ -23,6 +22,8 @@ return {
                     { desc = "LSP format buffer" })
                 vim.keymap.set('n', '<leader>cd', '<cmd>RustOpenDocs<cr>', { desc = "Open documentation" })
             end
+
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
             lspconfig.lua_ls.setup {
                 on_attach = on_attach,
