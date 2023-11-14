@@ -1,9 +1,29 @@
 return {
     {
+        "williamboman/mason.nvim",
+        build = ":MasonUpdate",
+        opts = {},
+    },
+    {
         "neovim/nvim-lspconfig",
         event = "VeryLazy",
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+        },
         config = function()
             local lspconfig = require('lspconfig')
+
+            require("mason-lspconfig").setup({
+                ensure_installed = {
+                    "rust_analyzer",
+                    "tsserver",
+                    "lua_ls",
+                    "sqlls",
+                    "marksman",
+                    "taplo",
+                },
+                automatic_installation = true,
+            })
 
             vim.api.nvim_create_autocmd("BufWritePre", { callback = function() vim.lsp.buf.format() end })
 
@@ -92,5 +112,5 @@ return {
                 severity_sort = true,
             })
         end
-    }
+    },
 }

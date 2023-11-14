@@ -51,17 +51,15 @@ return {
     },
     {
         "nvim-tree/nvim-web-devicons",
-        event = "VeryLazy",
+        lazy = true,
     },
     {
         "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
-        init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
         config = function()
-            vim.keymap.set("n", "<leader>rm", "<cmd>:MarkdownPreview<cr>", { desc = "Preview markdown" })
+            vim.keymap.set("n", "<leader>cp", "<cmd>:MarkdownPreviewToggle<cr>", { desc = "Preview" })
         end
     },
     {
