@@ -1,4 +1,4 @@
-set -g -x fish_greeting ''
+set -gx fish_greeting ''
 
 if not functions -q fisher
   set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config

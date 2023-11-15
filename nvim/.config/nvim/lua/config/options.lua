@@ -14,5 +14,6 @@ opt.showmode = false      -- redundant with statusline
 opt.signcolumn = "yes"    -- always draw the signcolumn
 opt.swapfile = false      -- disable swapfile creation
 opt.tabstop = 4           -- tab size
+opt.termguicolors = true  -- enable 24-bit RGB color
 
 o.timeoutlen = 300        -- ms to wait for a mapped sequence to complete
