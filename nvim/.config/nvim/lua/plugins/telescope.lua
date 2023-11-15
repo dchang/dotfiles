@@ -4,7 +4,16 @@ return {
         "nvim-telescope/telescope.nvim",
         event = "VeryLazy",
         dependencies = {
-            "nvim-lua/plenary.nvim"
+            "nvim-lua/plenary.nvim",
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build = "make",
+                -- build =
+                -- "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+                config = function()
+                    require("telescope").load_extension("fzf")
+                end
+            },
         },
         opts = {
             defaults = {
@@ -73,15 +82,6 @@ return {
                 { desc = "List wiki files" })
             vks("n", "<leader>wg", function() tb.live_grep({ cwd = "~/Documents/wiki" }) end,
                 { desc = "Search wiki files" })
-        end
-    },
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        event = "VeryLazy",
-        build =
-        "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-        config = function()
-            require("telescope").load_extension("fzf")
         end
     },
     {

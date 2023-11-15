@@ -98,15 +98,18 @@ return {
     },
     {
         "echasnovski/mini.starter",
+        event = "VimEnter",
         version = "*",
         config = function()
             local ms = require("mini.starter")
             ms.setup({
                 evaluate_single = true,
                 items = {
-                    ms.sections.recent_files(10, true),
-                    { name = "Lazy",  action = "Lazy",  section = "Config" },
-                    { name = "Mason", action = "Mason", section = "Config" },
+                    { name = "Recent", action = "Telescope oldfiles cwd_only=true", section = "Telescope" },
+                    { name = "Find",   action = "Telescope find_files",             section = "Telescope" },
+                    { name = "Grep",   action = "Telescope live_grep",              section = "Telescope" },
+                    { name = "Lazy",   action = "Lazy",                             section = "Config" },
+                    { name = "Mason",  action = "Mason",                            section = "Config" },
                     ms.sections.builtin_actions(),
                 },
             })
