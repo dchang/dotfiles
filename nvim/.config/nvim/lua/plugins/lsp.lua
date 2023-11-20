@@ -15,12 +15,12 @@ return {
 
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "rust_analyzer",
-                    "tsserver",
                     "lua_ls",
-                    "sqlls",
                     "marksman",
+                    "rust_analyzer",
+                    "sqlls",
                     "taplo",
+                    "tsserver",
                 },
                 automatic_installation = true,
             })
