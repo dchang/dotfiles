@@ -10,6 +10,7 @@ return {
     },
     {
         "simrat39/rust-tools.nvim",
+        enabled = false,
         opts = function()
             local ok, mason_registry = pcall(require, "mason-registry")
             local adapter
