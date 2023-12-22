@@ -36,5 +36,9 @@ return {
 
             },
         },
+        keys = {
+            { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+            { "<leader>dt", function() require("dap").terminate() end,         desc = "Terminate" },
+        },
     },
 }
