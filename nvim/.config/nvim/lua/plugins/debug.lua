@@ -22,7 +22,6 @@ return {
                 end,
             },
             {
-
                 "jay-babu/mason-nvim-dap.nvim",
                 dependencies = "mason.nvim",
                 cmd = { "DapInstall", "DapUninstall" },
@@ -33,7 +32,6 @@ return {
                         "codelldb",
                     },
                 },
-
             },
         },
         keys = {
