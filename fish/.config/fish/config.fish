@@ -30,5 +30,7 @@ set -x EDITOR nvim
 if grep WSL2 /proc/version > /dev/null
   set -x WGPU_BACKEND vulkan
   set -x BROWSER "powershell.exe /C start"
+  set -x VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 1
+  fish_add_path "/mnt/c/Program Files/Oracle/VirtualBox"
 end
 
