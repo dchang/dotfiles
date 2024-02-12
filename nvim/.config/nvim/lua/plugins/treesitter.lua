@@ -1,7 +1,7 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        version = "0.9.2", -- https://github.com/MDeiml/tree-sitter-markdown/issues/131
+        -- version = "0.9.2", -- https://github.com/MDeiml/tree-sitter-markdown/issues/131
         event = "BufAdd",
         opts = {
             ensure_installed = {
