@@ -1,14 +1,17 @@
-set -gx fish_greeting ''
-
 if not functions -q fisher
   set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
   curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
   fish -c fisher
 end
 
+set -gx fish_greeting ''
+set -x EDITOR nvim
+set -x BUN_INSTALL "$HOME/.bun"
+
 fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
+fish_add_path $BUN_INSTALL/bin
 
 abbr -a f 'find . | rg'
 abbr -a h 'history | rg'
@@ -25,11 +28,9 @@ abbr -a tldrf 'tldr -l | fzf --preview "tldr {1} --color=always" --preview-windo
 
 eval (keychain -q --eval id_ed25519)
 
-set -x EDITOR nvim
-
 if grep WSL2 /proc/version > /dev/null
   set -x WGPU_BACKEND vulkan
-  set -x BROWSER "powershell.exe /C start"
+  set -x BROWSER wslview
   set -x VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 1
   fish_add_path "/mnt/c/Program Files/Oracle/VirtualBox"
 end
