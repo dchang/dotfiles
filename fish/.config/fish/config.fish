@@ -1,7 +1,7 @@
 if not functions -q fisher
-  set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-  curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-  fish -c fisher
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
 end
 
 set -gx fish_greeting ''
@@ -17,6 +17,8 @@ abbr -a f 'find . | rg'
 abbr -a h 'history | rg'
 abbr -a mkdir 'mkdir -pv'
 abbr -a v nvim
+abbr -a vl NVIM_APPNAME=LazyVim nvim
+abbr -a vlw 'NVIM_APPNAME=LazyVim nvim -c "cd ~/Documents/wiki/"'
 abbr -a vcf 'nvim ~/.config/fish/config.fish -c "cd %:p:h"'
 abbr -a c cargo
 abbr -a ccl 'cargo clippy'
@@ -28,10 +30,9 @@ abbr -a tldrf 'tldr -l | fzf --preview "tldr {1} --color=always" --preview-windo
 
 eval (keychain -q --eval id_ed25519)
 
-if grep WSL2 /proc/version > /dev/null
-  set -x WGPU_BACKEND vulkan
-  set -x BROWSER wslview
-  set -x VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 1
-  fish_add_path "/mnt/c/Program Files/Oracle/VirtualBox"
+if grep WSL2 /proc/version >/dev/null
+    set -x WGPU_BACKEND vulkan
+    set -x BROWSER wslview
+    set -x VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 1
+    fish_add_path "/mnt/c/Program Files/Oracle/VirtualBox"
 end
-
