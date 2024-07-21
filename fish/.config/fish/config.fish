@@ -8,7 +8,6 @@ set -gx fish_greeting ''
 set -x EDITOR nvim
 set -x BUN_INSTALL "$HOME/.bun"
 
-fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $BUN_INSTALL/bin
