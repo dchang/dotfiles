@@ -15,4 +15,17 @@ return {
       inlay_hints = { enabled = false },
     },
   },
+
+  {
+    "dchang/notes.nvim",
+    keys = {
+      {
+        "<leader>n",
+        function()
+          require("notes").greet()
+        end,
+        desc = "Notes",
+      },
+    },
+  },
 }
