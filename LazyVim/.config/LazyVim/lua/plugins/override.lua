@@ -18,11 +18,15 @@ return {
 
   {
     "dchang/notes.nvim",
+    -- dir = "~/repos/notes.nvim",
+    config = {
+      dir = "~/Documents/wiki/",
+    },
     keys = {
       {
         "<leader>n",
         function()
-          require("notes").greet()
+          require("notes").new_diary_entry()
         end,
         desc = "Notes",
       },
