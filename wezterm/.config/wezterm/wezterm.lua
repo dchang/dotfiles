@@ -7,6 +7,7 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.audible_bell = "Disabled"
 config.color_scheme = "Tokyo Night Moon"
 config.default_domain = "WSL:Ubuntu-22.04"
 config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
