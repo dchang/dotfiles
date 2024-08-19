@@ -10,7 +10,6 @@ end
 config.audible_bell = "Disabled"
 config.color_scheme = "Tokyo Night Moon"
 config.default_domain = "WSL:Ubuntu-22.04"
-config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
 config.font_size = 9.5
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
