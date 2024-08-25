@@ -17,8 +17,7 @@ abbr -a f 'find . | rg'
 abbr -a h 'history | rg'
 abbr -a mkdir 'mkdir -pv'
 abbr -a v nvim
-abbr -a vl NVIM_APPNAME=LazyVim nvim
-abbr -a vlw 'NVIM_APPNAME=LazyVim nvim -c "cd ~/Documents/wiki/"'
+abbr -a vw 'nvim -c "cd ~/Documents/wiki/"'
 abbr -a vcf 'nvim ~/.config/fish/config.fish -c "cd %:p:h"'
 abbr -a c cargo
 abbr -a ccl 'cargo clippy'
