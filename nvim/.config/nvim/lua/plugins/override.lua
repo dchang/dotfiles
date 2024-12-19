@@ -14,7 +14,7 @@ return {
 		},
 		keys = {
 			{
-				"<leader>n",
+				"<leader>j",
 				function()
 					require("notes").new_diary_entry()
 				end,
