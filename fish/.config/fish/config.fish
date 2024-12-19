@@ -12,8 +12,8 @@ fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $BUN_INSTALL/bin
 
-if type -q /home/linuxbrew/.linuxbrew/bin/brew
-    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if type -q $HOME/bin/homebrew/bin/brew
+    eval ($HOME/bin/homebrew/bin/brew shellenv)
 end
 
 abbr -a f 'find . | rg'
