@@ -5,21 +5,4 @@ return {
 			inlay_hints = { enabled = false },
 		},
 	},
-
-	{
-		"dchang/notes.nvim",
-		-- dir = "~/repos/notes.nvim",
-		opts = {
-			dir = "~/Documents/wiki/",
-		},
-		keys = {
-			{
-				"<leader>j",
-				function()
-					require("notes").new_diary_entry()
-				end,
-				desc = "Notes",
-			},
-		},
-	},
 }
