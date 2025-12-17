@@ -30,7 +30,7 @@ abbr -a ct 'cargo t --'
 abbr -a cu 'cargo update'
 abbr -a tldrf 'tldr -l | fzf --preview "tldr {1} --color=always" --preview-window=right,80% | xargs tldr'
 
-# eval (keychain -q --eval id_ed25519)
+eval (keychain -q --eval id_ed25519)
 
 if [ -r /proc/version ] && grep WSL2 /proc/version >/dev/null
     set -x WGPU_BACKEND vulkan
