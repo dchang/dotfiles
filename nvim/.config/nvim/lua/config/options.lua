@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 vim.opt.scrolloff = 2
+vim.opt.colorcolumn = "100"
